@@ -1,27 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- website title -->
     <title>Maillot Wydad Athletic Club 2024-2025</title>
 
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
     <!-- link to files css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+  </head>
+  <body>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
 
 
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-column flex-sm-row justify-content-between align-items-center"
+        >
+          <ul
+            class="p-0 mb-2 mb-sm-0 d-flex flex-wrap align-items-center justify-content-center"
+          >
+            <li class="me-2 mb-1 mb-sm-0 d-flex align-items-center">
+              <i class="fa-solid fa-envelope"></i>
+              <span class="ms-2">contact@wacofficiel.com</span>
+            </li>
+            <li class="ms-2 mb-1 mb-sm-0 d-flex align-items-center">
+              <i class="fa-solid fa-phone"></i>
+              <span class="ms-2">0612345678</span>
+            </li>
+          </ul>
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="#">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">A propos</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="#">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Boutique</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div class="single-item-in-cart d-flex align-items-start border-bottom py-1">
+          <div class="product-img w-25 me-2 position-relative">
+            <img src="assets/images/products/product-1.jpg" alt="product-img" class="main-img w-100">
+            <img class="img-hover" src="assets/images/product-details/product-details-1-1.jpg" alt="" class="w-100">
+          </div>
+          <div class="product-details me-2">
+            <h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6>
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div class="single-item-in-cart d-flex align-items-start border-bottom py-1">
+          <div class="product-img w-25 me-2 position-relative">
+            <img src="assets/images/products/product-2.jpg" alt="product-img" class="main-img w-100">
+            <img class="img-hover" src="assets/images/product-details/product-details-2-1.jpg" alt="" class="w-100">
+          </div>
+          <div class="product-details me-2">
+            <h6>Troisième maillot de match Wydad Casablanca 2023/24</h6>
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center">
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase">checkout</a>
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
 
     <!-- link to files js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js.map"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/all.min.js"></script>
-</body>
+  </body>
 </html>
