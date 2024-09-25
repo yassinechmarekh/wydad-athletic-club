@@ -159,11 +159,48 @@ p {
   background: linear-gradient(to top, #db10029d, #db100236);
 }
 
+.palmares-banner {
+  width: 100%;
+  height: 600px;
+  background-image: url("/assets/images/banners/palmares.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
 
-@media (max-width: 310px) {
-  .cart {
-    width: 100%;
-  }
+.palmares-banner::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #db10029a;
+}
+
+.top-banner {
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-banner img {
+  width: 70px;
+}
+
+.palmares-sec {
+  top: 25%;
+  left: 0;
+}
+
+.palmares-sec .palmares {
+  height: 80%;
+}
+
+.test {
+  height: 1000px;
 }
 
 @media (max-width: 310px) {
@@ -177,6 +214,12 @@ p {
     height: 600px;
     object-position: center;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 550px) {
+  .palmares-sec .palmares .single-palmares img {
+    width: 300px !important;
   }
 }
 
