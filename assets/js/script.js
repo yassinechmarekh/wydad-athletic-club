@@ -1,3 +1,12 @@
+// loader
+window.addEventListener("load", function () {
+  document
+    .getElementById("loader-container")
+    .style.setProperty("display", "none", "important");
+  document.body.classList.remove("no-scroll");
+});
+document.body.classList.add("no-scroll");
+
 // open & close cart
 cart = document.getElementById("cart");
 bg_overlay = document.querySelector(".bg-overlay");
@@ -11,12 +20,3 @@ function close_cart() {
   cart.classList.remove("active");
   bg_overlay.classList.remove("active");
 }
-
-// loader
-window.addEventListener("load", function () {
-  document
-    .getElementById("loader-container")
-    .style.setProperty("display", "none", "important");
-  document.body.classList.remove("no-scroll");
-});
-document.body.classList.add("no-scroll");
