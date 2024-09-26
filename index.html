@@ -74,14 +74,33 @@
                   >Accueil</a
                 >
               </li>
+              <li class="nav-item dropdown my-auto">
+                <a class="nav-link text-red dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Histoire</a></li>
+                  <li><a class="dropdown-item" href="#">Palmares</a></li>
+                </ul>
+              </li>
               <li class="nav-item my-auto">
-                <a class="nav-link text-red" href="#">A propos</a>
+                <a class="nav-link text-red" href="#">Boutique</a>
               </li>
               <a class="navbar-brand d-none d-lg-block mx-2" href="#">
                 <img src="assets/images/logo/logo.svg" alt="logo" />
               </a>
+              <li class="nav-item dropdown my-auto">
+                <a class="nav-link text-red dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-red" href="#">Président</a></li>
+                  <li><a class="dropdown-item text-red" href="#">Entraîneur</a></li>
+                  <li><a class="dropdown-item text-red" href="#">Joueurs</a></li>
+                </ul>
+              </li>
               <li class="nav-item my-auto">
-                <a class="nav-link text-red" href="#">Boutique</a>
+                <a class="nav-link text-red" href="#">News</a>
               </li>
               <li class="nav-item my-auto">
                 <a class="nav-link text-red" href="#">Contact</a>
@@ -336,7 +355,7 @@
         </h1>
         <div class="d-flex align-items-center text-white">
           <i class="fa-solid fa-trophy"></i>
-          <h4 class="mx-3 my-0 fs-5 fw-bold text-uppercase">plamarès</h4>
+          <h4 class="mx-3 my-0 fs-5 fw-bold text-uppercase third-font-family">plamarès</h4>
           <i class="fa-solid fa-trophy"></i>
         </div>
       </div>
@@ -344,82 +363,80 @@
       <div class="palmares-sec w-100 position-absolute z-2">
         <div class="palmares-swp mySwiper position-relative overflow-hidden">
           <div class="swiper-wrapper palmares">
-            <div
-              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
-            >
-              <span class="badge bg-red fs-5">22</span>
+            <div class="swiper-slide single-palmares text-center">
+              <span class="badge bg-red fs-5 third-font-family">22</span>
               <img
                 src="assets/images/palmares/botola-pro.svg"
                 alt=""
                 class="w-100"
               />
               <div
-                class="single-palmares-title my-2 badge bg-white text-red fs-5"
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
               >
                 Botola pro
               </div>
             </div>
             <div class="swiper-slide single-palmares text-center">
-              <span class="badge bg-red fs-5">3</span>
+              <span class="badge bg-red fs-5 third-font-family">3</span>
               <img
                 src="assets/images/palmares/CAF-Champions-League.svg"
                 alt=""
                 class="w-100"
               />
               <div
-                class="single-palmares-title my-2 badge bg-white text-red fs-5"
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
               >
                 CAF Champions League
               </div>
             </div>
             <div class="swiper-slide single-palmares text-center">
-              <span class="badge bg-red fs-5">9</span>
+              <span class="badge bg-red fs-5 third-font-family">9</span>
               <img
                 src="assets/images/palmares/Coupe-du-trône.svg"
                 alt=""
                 class="w-100"
               />
               <div
-                class="single-palmares-title my-2 badge bg-white text-red fs-5"
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
               >
                 Coupe du trône
               </div>
             </div>
             <div class="swiper-slide single-palmares text-center">
-              <span class="badge bg-red fs-5">1</span>
+              <span class="badge bg-red fs-5 third-font-family">1</span>
               <img
                 src="assets/images/palmares/Coupe-de-la-Confédération-Africaine.svg"
                 alt=""
                 class="w-100"
               />
               <div
-                class="single-palmares-title my-2 badge bg-white text-red fs-5"
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
               >
                 Confédération Africaine
               </div>
             </div>
             <div class="swiper-slide single-palmares text-center">
-              <span class="badge bg-red fs-5">1</span>
+              <span class="badge bg-red fs-5 third-font-family">1</span>
               <img
                 src="assets/images/palmares/Supercoupe-Africaine.svg"
                 alt=""
                 class="w-100"
               />
               <div
-                class="single-palmares-title my-2 badge bg-white text-red fs-5"
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
               >
                 Supercoupe Africaine
               </div>
             </div>
             <div class="swiper-slide single-palmares text-center">
-              <span class="badge bg-red fs-5">1</span>
+              <span class="badge bg-red fs-5 third-font-family">1</span>
               <img
                 src="assets/images/palmares/Ligue-des-Champions-Arabe.svg"
                 alt=""
                 class="w-100"
               />
               <div
-                class="single-palmares-title my-2 badge bg-white text-red fs-5"
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
               >
                 Champion d'Arabe
               </div>
@@ -728,7 +745,317 @@
       </div>
     </div>
 
-    <div class="test"></div>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div
+            class="banner-product first col-lg-6 d-none d-lg-block position-relative"
+          >
+            <img
+              src="assets/images/banners/product-banner-1.svg"
+              alt=""
+              class="w-100 rounded-2"
+            />
+            <div class="content w-50">
+              <h4 class="text-white fw-bold">Nouvelle arrivage</h4>
+              <p class="text-white-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <a href="#" class="text-white fw-bold text-capitalize"
+                >acheter maintenant !</a
+              >
+            </div>
+          </div>
+          <div class="banner-product second col-lg-6 position-relative">
+            <img
+              src="assets/images/banners/product-banner-2.svg"
+              alt=""
+              class="w-100 rounded-2"
+            />
+            <div class="content w-50">
+              <h4 class="text-white fw-bold text-capitalize">
+                Nouveau maillot
+              </h4>
+              <p class="text-white-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <a href="#" class="text-white fw-bold text-capitalize"
+                >acheter maintenant !</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <div class="container">
+        <h1
+          class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+        >
+          <span class="text-red">Autre</span> produits
+        </h1>
+        <div class="my-3 row">
+          <div class="col-12 col-sm-6 col-lg-8 col-xl-9">
+            <div
+              class="products-swp mySwiper position-relative overflow-hidden"
+            >
+              <div class="swiper-wrapper products">
+                <div class="swiper-slide card single-product">
+                  <div class="card-img-top position-relative overflow-hidden">
+                    <a href="#">
+                      <img
+                        src="assets/images/products/product-3.jpg"
+                        class="w-100 h-100"
+                        alt="..."
+                      />
+                    </a>
+                    <div class="hover-btns">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productModal"
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-cart-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                    <a href="#" class="card-title"
+                      >Maillot de match domicile adulte Wydad Casablanca
+                      2023/24</a
+                    >
+                    <p class="count-orders card-text mb-0">Commandes (756)</p>
+                    <div
+                      class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="price d-flex">
+                        <h6 class="me-2 mb-0 fs-6 fw-bold text-red">750 Dhs</h6>
+                        <h6 class="mb-0 fs-6 text-decoration-line-through">
+                          800 Dhs
+                        </h6>
+                      </div>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="text-capitalize">ajouter</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide card single-product">
+                  <div class="card-img-top position-relative overflow-hidden">
+                    <a href="#">
+                      <img
+                        src="assets/images/products/product-1.jpg"
+                        class="w-100 h-100"
+                        alt="..."
+                      />
+                    </a>
+                    <div class="hover-btns">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productModal"
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-cart-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                    <a href="#" class="card-title"
+                      >Maillot de match extérieur adulte Wydad Casablanca
+                      2023/24</a
+                    >
+                    <p class="count-orders card-text mb-0">Commandes (756)</p>
+                    <div
+                      class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="price d-flex">
+                        <h6 class="me-2 mb-0 fs-6 fw-bold text-red">750 Dhs</h6>
+                        <h6 class="mb-0 fs-6 text-decoration-line-through">
+                          800 Dhs
+                        </h6>
+                      </div>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="text-capitalize">ajouter</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide card single-product">
+                  <div class="card-img-top position-relative overflow-hidden">
+                    <a href="#">
+                      <img
+                        src="assets/images/products/product-2.jpg"
+                        class="w-100 h-100"
+                        alt="..."
+                      />
+                    </a>
+                    <div class="hover-btns">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productModal"
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-cart-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                    <a href="#" class="card-title"
+                      >Troisième maillot de match adulte Wydad Casablanca
+                      2023/24</a
+                    >
+                    <p class="count-orders card-text mb-0">Commandes (756)</p>
+                    <div
+                      class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="price d-flex">
+                        <h6 class="me-2 mb-0 fs-6 fw-bold text-red">750 Dhs</h6>
+                        <h6 class="mb-0 fs-6 text-decoration-line-through">
+                          800 Dhs
+                        </h6>
+                      </div>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="text-capitalize">ajouter</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide card single-product">
+                  <div class="card-img-top position-relative overflow-hidden">
+                    <a href="#">
+                      <img
+                        src="assets/images/products/product-5.jpg"
+                        class="w-100 h-100"
+                        alt="..."
+                      />
+                    </a>
+                    <div class="hover-btns">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productModal"
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-cart-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text mb-0 fs-6 fw-bold text-red">Short</p>
+                    <a href="#" class="card-title"
+                      >Short de match rouge adulte Wydad Casablanca 2023/24</a
+                    >
+                    <p class="count-orders card-text mb-0">Commandes (756)</p>
+                    <div
+                      class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="price d-flex">
+                        <h6 class="me-2 mb-0 fs-6 fw-bold text-red">450 Dhs</h6>
+                        <h6 class="mb-0 fs-6 text-decoration-line-through">
+                          500 Dhs
+                        </h6>
+                      </div>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="text-capitalize">ajouter</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide card single-product">
+                  <div class="card-img-top position-relative overflow-hidden">
+                    <a href="#">
+                      <img
+                        src="assets/images/products/product-4.jpg"
+                        class="w-100 h-100"
+                        alt="..."
+                      />
+                    </a>
+                    <div class="hover-btns">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productModal"
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-cart-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                    <a href="#" class="card-title"
+                      >Short de match noir adulte Wydad Casablanca 2023/24</a
+                    >
+                    <p class="count-orders card-text mb-0">Commandes (756)</p>
+                    <div
+                      class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                    >
+                      <div class="price d-flex">
+                        <h6 class="me-2 mb-0 fs-6 fw-bold text-red">450 Dhs</h6>
+                        <h6 class="mb-0 fs-6 text-decoration-line-through">
+                          500 Dhs
+                        </h6>
+                      </div>
+                      <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="text-capitalize">ajouter</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="swiper-button-prev nav-swp btn btn-danger text-white"
+              ></div>
+              <div
+                class="swiper-button-next nav-swp btn btn-danger text-white"
+              ></div>
+            </div>
+          </div>
+          <div class="d-none d-sm-block col-6 col-lg-4 col-xl-3">
+            <a href="#">
+              <img
+                src="assets/images/banners/maillots-banner.jpg"
+                alt=""
+                class="w-100 h-100 rounded-2"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <!-- link to files js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>

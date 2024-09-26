@@ -29,9 +29,9 @@ const palmares_swp = new Swiper(".palmares-swp", {
   loop: true,
   slidesPerView: 4,
   spaceBeetween:20,
-  // autoplay: {
-  //   delay: 2500,
-  // },
+  autoplay: {
+    delay: 2500,
+  },
   breakpoints: {
     1800: {
       slidesPerView: 6,
@@ -59,14 +59,14 @@ const products_swp = new Swiper('.products-swp', {
   loop: true,
   slidesPerView: 3,
   spaceBetween: 20,
+  autoplay: {
+    delay: 3500,
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
   breakpoints: {
-    // 1500: {
-    //   slidesPerView: 4,
-    // },
     1200: {
       slidesPerView: 3,
     },
