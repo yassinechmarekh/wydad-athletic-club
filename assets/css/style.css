@@ -9,6 +9,7 @@
 
 :root {
   --red-color: #db1202;
+  --second-color: #fe9213;
   --parag-color: #888888;
   --red-lite-color: #f9bbb7;
 }
@@ -31,6 +32,10 @@
   color: var(--red-color);
 }
 
+.text-yellow {
+  color: var(--second-color);
+}
+
 .border-color-red {
   border-color: var(--red-color);
 }
@@ -43,7 +48,7 @@ p {
   font-family: "Lobster Two", sans-serif !important;
 }
 
-.third-font-family{
+.third-font-family {
   font-family: drive-corps !important;
 }
 
@@ -74,9 +79,18 @@ p {
   border-radius: 10px;
 }
 
-.dropdown-menu .dropdown-item:hover{
+.nav-link.dropdown-toggle.show {
+  background-color: transparent;
+  color: var(--second-color) !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
   background-color: var(--red-color) !important;
   color: #fff !important;
+}
+
+.nav-link:hover{
+  color: var(--second-color) !important;
 }
 
 .icon-menu svg {
@@ -298,34 +312,79 @@ p {
   background-color: var(--red-color);
 }
 
-#productModal .modal-content{
+#productModal .modal-content {
   border-color: var(--red-color) !important;
 }
 
-#productModal .modal-header{
+#productModal .modal-header {
   border-color: var(--red-color);
 }
 
-#productModal .qty{
+#productModal .qty {
   border-color: var(--red-color);
   border-radius: 5px;
   outline: none;
 }
 
-.banner-product .content{
+.banner-product .content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.banner-product.first .content{
+.banner-product.first .content {
   left: 40px;
 }
 
-.banner-product.second .content{
+.banner-product.second .content {
   right: 15px;
 }
 
+footer .social-link li {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  color: var(--red-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+footer .social-link li:hover {
+  transform: scale(0.9);
+  background-color: var(--second-color);
+  color: #fff;
+}
+
+footer .quick-link li {
+  transition: 0.3s ease-in-out;
+}
+
+footer .quick-link li:hover {
+  transform: scale(1.03);
+}
+
+footer .contact-info .contact-info-title h5 {
+  font-size: 18px;
+}
+
+footer .contact-info .contact-info-title {
+  color: #ffbe74;
+}
+
+footer .footer-bottom {
+  border-color: #fff !important;
+}
+
+footer .footer-bottom p a {
+  transition: 0.3s ease-in-out;
+}
+
+footer .footer-bottom p a:hover {
+  color: var(--second-color) !important;
+}
 
 @media (max-width: 310px) {
   .cart {
@@ -333,11 +392,11 @@ p {
   }
 }
 @media (max-width: 400px) {
-  .banner-product.second .content{
+  .banner-product.second .content {
     width: 45% !important;
     font-size: 14px;
   }
-  .banner-product.second .content p{
+  .banner-product.second .content p {
     display: none;
   }
 }
