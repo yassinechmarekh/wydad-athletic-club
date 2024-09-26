@@ -53,3 +53,34 @@ const palmares_swp = new Swiper(".palmares-swp", {
     },
   },
 });
+
+
+const products_swp = new Swiper('.products-swp', {
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    // 1500: {
+    //   slidesPerView: 4,
+    // },
+    1200: {
+      slidesPerView: 3,
+    },
+    991: {
+      slidesPerView: 2,
+    },
+    576: {
+      slidesPerView: 1,
+    },
+    450: {
+      slidesPerView: 2,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+});
