@@ -18,26 +18,33 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
   </head>
   <body>
+    <div class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white" id="loader-container">
+      <span class="loader"></span>
+    </div>
+
     <div class="bg-overlay" onclick="close_cart()"></div>
 
     <!-- start navbar -->
     <nav>
       <div class="top-nav bg-red text-white py-2">
         <div
-          class="container d-flex flex-column flex-sm-row justify-content-between align-items-center"
+          class="container d-flex flex-wrap justify-content-between align-items-center"
         >
-          <ul
-            class="p-0 mb-2 mb-sm-0 d-flex flex-wrap align-items-center justify-content-center"
-          >
-            <li class="me-2 mb-1 mb-sm-0 d-flex align-items-center">
-              <i class="fa-solid fa-envelope"></i>
-              <span class="ms-2">contact@wacofficiel.com</span>
-            </li>
-            <li class="ms-2 mb-1 mb-sm-0 d-flex align-items-center">
-              <i class="fa-solid fa-phone"></i>
-              <span class="ms-2">0612345678</span>
-            </li>
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
           </ul>
+          <h1 class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize">wydad athletic club</h1>
           <button
             onclick="open_cart()"
             type="button"
