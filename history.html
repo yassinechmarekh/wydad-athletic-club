@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- website title -->
+    <title>Maillot Wydad Athletic Club 2024-2025</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
+    <!-- link to files css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div
+      class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+      id="loader-container"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
+
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
+          </ul>
+          <h1
+            class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize"
+          >
+            wydad athletic club
+          </h1>
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="#">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" aria-current="page" href="#">Accueil</a>
+              </li>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Histoire</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Palmares</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Boutique</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="#">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Président</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Entraîneur</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Joueurs</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">News</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-1.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-1-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-2.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-2-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Troisième maillot de match Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div
+          class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center"
+        >
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase"
+            >checkout</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    <!-- start top-page -->
+    <section class="top-page position-relative overflow-hidden">
+      <img
+        src="assets/images/banners/top-page.svg"
+        alt=""
+        class="mx-0 position-absolute top-0 w-100 h-100"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-white text-center"
+      >
+        <h2 class="fs-3 fw-bold text-capitalize third-font-family">Histoire</h2>
+        <div class="d-flex align-items-center justify-content-center">
+          <a href="#" class="text-white"
+            ><h5 class="mb-0 text-capitalize">accueil</h5></a
+          >
+          <i class="fa-regular fa-futbol mx-2"></i>
+          <h5 class="mb-0 text-capitalize">Histoire</h5>
+        </div>
+      </div>
+    </section>
+    <!-- end top-page -->
+
+    <div class="my-3">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              L'histoire darouha rijal
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="row flex-column-reverse flex-lg-row align-items-center">
+          <div class="col-12 col-lg-8">
+            <p class="mb-1">
+              Le Wydad Athletic Club, également connu sous les noms de Wydad ou
+              WAC, est l’un des clubs les plus emblématiques du Maroc. Fondé en
+              1937 à Casablanca, le club est réputé pour sa passion, sa
+              résistance et ses succès.
+            </p>
+            <p class="mb-1">
+              Surnommé « Le Wydad », le club est connu pour ses couleurs : le
+              rouge et le blanc. Les matchs à domicile se déroulent au Stade
+              Mohamed V, également appelé le Stade d’Honneur ou Donor, une
+              enceinte légendaire qui a été témoin de nombreux exploits du club.
+            </p>
+            <p class="mb-1">
+              Le Wydad Athletic Club a été créé par un groupe d’intellectuels et
+              de jeunes résistants pendant l’occupation française du Maroc en
+              1937, notamment feu Mohamed Benjelloun. Il a d’abord débuté avec
+              une équipe de water-polo avant de former sa section de football en
+              1939, avec le soutien du Père Jégo.
+            </p>
+            <p class="mb-1">
+              Le club a rapidement gravi les échelons en accédant à la première
+              division du championnat marocain en 1942, et a remporté son
+              premier grand trophée en 1948, qu’il a conservé pendant quatre
+              ans. Durant cette période, le Wydad a également dominé le football
+              maghrébin en remportant trois Championnats d’Afrique du Nord, deux
+              Supercoupes d’Afrique du Nord et une Coupe d’Afrique du Nord.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <figure>
+              <img
+                src="assets/images/history/Mohamed-Benjelloun-Touimi.webp"
+                alt=""
+                class="history-img w-100"
+              />
+              <figcaption class="mt-1 fst-italic text-center text-black-50">
+                Mohamed Benjelloun Touimi - Fondateur et premier président du
+                Wydad
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-4">
+            <figure>
+              <img
+                src="assets/images/history/Wydad-1939-1940.webp"
+                alt=""
+                class="history-img w-100"
+              />
+              <figcaption class="mt-1 fst-italic text-center text-black-50">
+                Equipe du Wydad lors de sa première saison
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-lg-8">
+            <p class="mb-1">
+              En 1956, le Maroc a obtenu son indépendance et le Wydad est devenu
+              le premier club enregistré auprès de la Fédération Royale
+              Marocaine de Football avec le numéro d’immatriculation : 1. Le
+              club a même remporté la Coupe de l’indépendance en battant le FC
+              Maghreb Aksa à Tanger grâce à un but d’Abdelhak Kadmiri, le 9
+              décembre 1956.
+            </p>
+            <p class="mb-1">
+              Jusqu’en 1969, le Wydad a continué son parcours en remportant huit
+              championnats, mais n’a jamais réussi à remporter la Coupe du Trône
+              malgré quatre finales disputées. L’une d’entre elles s’est soldée
+              par une décision controversée en 1957, où la coupe a été attribuée
+              à la Mouloudia d’Oujda, sous prétexte que cette équipe avait
+              marqué en premier, alors que le match s’était terminé sur un match
+              nul 1-1. Selon les règles en vigueur à l’époque, le match aurait
+              dû être rejoué
+            </p>
+            <p class="mb-1">
+              Lors de l’édition 1969/1970 de la Coupe, le Wydad a atteint la
+              finale pour affronter la Renaissance de Settat, après avoir battu
+              la Hassania d’Agadir, le Difaâ Hassani El Jadidi et le Maghreb
+              Fassi en demi-finale. La demi-finale a été très disputée, avec un
+              premier match nul 1-1 qui a nécessité un match rejoué. Le Wydad
+              s’est qualifié en remportant le deuxième match sur le score de
+              1-0.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="row flex-column-reverse flex-lg-row align-items-center">
+          <div class="col-12 col-lg-8">
+            <p class="mb-1">
+              Cette année, le Wydad était décidé de remportant le titre surtout
+              le match se joua devant les supporters du Wydad au Stade d’Honneur
+              et avec la présence du Roi Hassan II.
+            </p>
+            <p class="mb-1">
+              L’année de cette finale, le Wydad était déterminé à remporter le
+              titre, surtout en jouant devant ses fervents supporters au Stade
+              d’Honneur et en présence du Roi Hassan II. Après 90 minutes de
+              jeu, une explosion de joie a retenti
+            </p>
+            <p class="mb-1">
+              Depuis, le Wydad Athletic Club a réussi à remporter huit autres
+              Coupes du Trône, portant son total à neuf victoires mais depuis
+              2001, le Wydad n’a plus remporté ce trophée, malgré trois finales
+              disputées, dont deux ont été perdues lors des tirs au but.
+            </p>
+            <p class="mb-1">
+              Après avoir remporté de nombreux championnats, coupes nationales
+              et compétitions maghrébines, les ambitions du Wydad, de sa
+              direction et de ses supporters ont continué à croître. L’équipe a
+              commencé à organiser des matchs amicaux contre de grands clubs
+              mondiaux. Le Wydad a également affronté de grandes équipes lors
+              des différentes éditions de la Coupe Mohamed V.
+            </p>
+            <p class="mb-1">
+              Lors de son premier match dans cette coupe, le Wydad a affronté le
+              Real Madrid, contre lequel il a perdu difficilement sur le score
+              de 2-0. Le Wydad a également affronté des équipes telles que le
+              Slovan Bratislava, le Bayern Munich, São Paulo, Aguila,
+              Anderlecht, Sporting de Lisbonne, la sélection roumaine, Everton
+              et Monaco. Le Wydad a également affronté des équipes africaines ou
+              marocaines telles que le Hafia Conakry, l’AS FAR, l’ASC Jeanne
+              d’Arc de Dakar et le Canon Yaoundé, contre lequel il a remporté la
+              finale en 1979.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <figure>
+              <img
+                src="assets/images/history/Coupe-Mohamed-V.webp"
+                alt=""
+                class="history-img w-100"
+              />
+              <figcaption class="mt-1 fst-italic text-center text-black-50">
+                Larbi Aherdane en train de porter le trophée de la coupe
+                Mohammed V en 1979
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-4">
+            <figure>
+              <img
+                src="assets/images/history/CAFCL-1992.webp"
+                alt=""
+                class="history-img w-100"
+              />
+              <figcaption class="mt-1 fst-italic text-center text-black-50">
+                Fakhreddine Rajhi en train de soulever la coupe d'Afrique des
+                Clubs Champions
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-lg-8">
+            <p class="mb-1">
+              Le Wydad est la seule équipe, en dehors des équipes d’Amérique
+              latine et d’Europe, à avoir remporté le titre de la Coupe Mohamed
+              V, qui a disparu en 1989, tout au long de son histoire.
+            </p>
+            <p class="mb-1">
+              Entre 1989 et 1993, le Wydad a connu sa première période de grands
+              succès. Pendant cette période, le club a remporté trois
+              championnats, une Coupe du Trône, une Ligue des Champions arabe et
+              une Supercoupe arabe, mais surtout sa première Ligue des Champions
+              africaine, remportée en battant le Hilal du Soudan 2-0 à
+              Casablanca lors du match aller et un match nul au retour 0-0, à
+              Omdourman.
+            </p>
+            <p class="mb-1">
+              Ces victoires ont couronné les efforts à long terme du regretté
+              Abderrazak Mekouar, président du Wydad de 1972 à 1993, qui a
+              révolutionné la gestion du club et influencé l’ensemble du
+              football marocain.
+            </p>
+            <p class="mb-1">
+              Parmi les mesures phares prises par le président Mekouar figurait
+              l’introduction de la rémunération des joueurs, faisant du Wydad la
+              première équipe marocaine à adopter cette pratique.
+            </p>
+            <p class="mb-1">
+              À la fin de la saison 1993, le président emblématique du Wydad et
+              plusieurs joueurs ont quitté le club, soit pour jouer à
+              l’étranger, soit pour prendre leur retraite, soit pour rejoindre
+              d’autres équipes marocaines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="row flex-column-reverse flex-lg-row align-items-center">
+          <div class="col-12 col-lg-8">
+            <p class="mb-1">
+              Le Wydad est donc entré dans une période de renouveau, mais aussi
+              de doute. Pendant ce temps, le Raja Casablanca, autre équipe de la
+              ville, a profité de ces incertitudes pour dominer le championnat
+              entre 1996 et 2001, remportant notamment sa deuxième et troisième
+              Ligue des Champions africaine en 1997 et 1999, cette dernière
+              étant la dernière édition remportée par le Raja.
+            </p>
+            <p class="mb-1">
+              Pendant cette période de domination du Raja, le Wydad a remporté
+              quatre Coupes du Trône, dont la dernière en date en 2001. Grâce à
+              cette victoire, le Wydad a pu participer à la Coupe d’Afrique des
+              vainqueurs de coupe (précurseur de la Coupe de la Confédération
+              africaine), qu’il a remportée en battant l’Asante Kotoko en finale
+              grâce au critère du but à l’extérieur. Victoire 1-0 à l’aller à
+              Casablanca et défaite 2-1 à Kumasi, au Ghana.
+            </p>
+            <p class="mb-1">
+              Ensuite, le Wydad a connu une période de doute et d’instabilité
+              entre 2003 et 2014, au cours de laquelle le club a remporté son
+              premier championnat en 13 ans lors de la saison 2005-2006. C’est
+              également pendant cette saison que les Ultras Winners ont été
+              créés et sont devenus les meilleurs ultras au monde selon
+              différents classements, devenant ainsi des acteurs majeurs du
+              club, surtout à Casablanca. Le Wydad a remporté à nouveau le
+              championnat en 2010, dans un suspens intense, puisqu’il a dû
+              attendre la 30e et dernière journée pour prendre la première
+              place, après sa victoire à Casablanca contre le FUS de Rabat et la
+              défaite du Raja à Rabat face à l’AS FAR.
+            </p>
+          </div>
+          <div class="col-12 col-lg-4">
+            <figure>
+              <img
+                src="assets/images/history/Akram-et-Naciri.webp"
+                alt=""
+                class="history-img w-100"
+              />
+              <figcaption class="mt-1 fst-italic text-center text-black-50">
+                Abdelilah Akram et Said Naciri des anciens présidents de Wydad
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="w-100 mt-3">
+          <p class="mb-1">
+            En 2014, Said Naciri a été élu nouveau président, succédant à
+            Abdelilah Akram, qui avait dû quitter ses fonctions suite au boycott
+            des supporters du Wydad, qui critiquaient sa gestion du club.
+          </p>
+          <p class="mb-1">
+            Le président Said Naciri a permis au club de retrouver la stabilité
+            grâce à une gestion, certes autoritaire mais efficace. Sa stratégie
+            a rapidement porté ses fruits, et le Wydad est redevenu un grand
+            club africain qui suscite l’attention dans le monde entier. Depuis
+            2015, le Wydad a remporté le championnat à cinq reprises et a
+            terminé au pire à la deuxième place. Le club s’est également
+            illustré en remportant deux Ligue des Champions africaine, la
+            première sous la direction de Houcine Ammouta et la deuxième avec
+            Oualid Regragui, qui a ensuite rejoint l’équipe nationale du Maroc
+            en tant que sélectionneur et a réussi à atteindre les demi-finales
+            de la Coupe du Monde 2022 au Qatar.
+          </p>
+          <p class="mb-1">A suivre…</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-red">
+      <div class="container">
+        <div class="py-5">
+          <div class="mb-4 d-flex flex-column align-items-center">
+            <a href="#"
+              ><img src="assets/images/logo/white-logo.svg" alt=""
+            /></a>
+            <h1 class="mt-2 fs-4 text-white text-center third-font-family">
+              Porter le maillot du Wydad est un honneur <br />
+              Le mouiller est un devoir
+            </h1>
+          </div>
+          <div class="main-footer mt-2 row">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                wydad athletic club
+              </h3>
+              <p class="fs-6 text-white">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consectetur, modi error? Nihil deserunt modi, rem dolor
+                laudantium corporis officiis aliquid.
+              </p>
+              <ul class="social-link d-flex ps-0">
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-facebook-f"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-instagram"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-x-twitter"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-youtube"></i></li
+                ></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                lien rapide
+              </h3>
+              <ul class="ps-0 quick-link">
+                <a href="#"><li class="text-white">Accueil</li></a>
+                <a href="#"><li class="text-white">A propos</li></a>
+                <a href="#"><li class="text-white">Boutique</li></a>
+                <a href="#"><li class="text-white">Effectif</li></a>
+                <a href="#"><li class="text-white">News</li></a>
+                <a href="#"><li class="text-white">Contact</li></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                Contact infos
+              </h3>
+              <ul class="contact-info ps-0">
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5 class="ms-2 mb-0">Adresse</h5>
+                  </div>
+                  <p class="text-white mb-0">
+                    Complexe Sportif Haj Mohamed Benjelloun
+                  </p>
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h5 class="ms-2 mb-0">Mail</h5>
+                  </div>
+                  <a
+                    href="mailto:contact@wydadathleticclub.com"
+                    class="text-white"
+                    >contact@wydadathleticclub.com</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <h5 class="ms-2 mb-0">Téléphone</h5>
+                  </div>
+                  <a href="tel:0612345678" class="text-white"
+                    >+212 612 345 678</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom py-2 border-top text-center">
+          <p class="mb-0 text-white">
+            &copy;
+            <span class="fw-bold text-capitalize text-yellow second-font-family"
+              >wydad athletic club</span
+            >, All Right Reserved. Designed By
+            <a href="#" class="text-white text-decoration-underline"
+              >Yassine_ChM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- link to files js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js.map"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>
