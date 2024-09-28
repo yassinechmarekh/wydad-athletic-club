@@ -518,6 +518,30 @@ figure figcaption {
   border-color: var(--red-color);
 }
 
+.contact-form{
+  border-color: var(--red-color) !important;
+}
+
+textarea,
+input{
+  border-color: var(--red-color) !important;
+}
+
+textarea:focus,
+input:focus{
+  box-shadow: 0 0 0 .25rem #db10021b !important;
+}
+
+textarea:focus::placeholder,
+input:focus::placeholder{
+  color: var(--red-color);
+}
+
+label,
+::placeholder{
+  color: var(--parag-color);
+}
+
 @media (max-width: 1200px) {
   .all-products .single-product {
     width: calc((100% / 3) - 11px);
