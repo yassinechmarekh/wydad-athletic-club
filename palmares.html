@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- website title -->
+    <title>Wydad Athletic Club</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
+    <!-- link to files css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div
+      class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+      id="loader-container"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
+
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
+          </ul>
+          <h1
+            class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize"
+          >
+            wydad athletic club
+          </h1>
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="#">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" aria-current="page" href="#"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Histoire</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Palmares</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Boutique</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="#">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Président</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Entraîneur</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Joueurs</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">News</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-1.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-1-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-2.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-2-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Troisième maillot de match Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div
+          class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center"
+        >
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase"
+            >checkout</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    <!-- start top-page -->
+    <section class="top-page position-relative overflow-hidden">
+      <img
+        src="assets/images/banners/top-page.svg"
+        alt=""
+        class="mx-0 position-absolute top-0 w-100 h-100"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-white text-center"
+      >
+        <h2 class="fs-3 fw-bold text-capitalize third-font-family">Palmares</h2>
+        <div class="d-flex align-items-center justify-content-center">
+          <a href="#" class="text-white"
+            ><h5 class="mb-0 text-capitalize">accueil</h5></a
+          >
+          <i class="fa-regular fa-futbol mx-2"></i>
+          <h5 class="mb-0 text-capitalize">Palmares</h5>
+        </div>
+      </div>
+    </section>
+    <!-- end top-page -->
+
+    <div class="my-3">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              jbna lbotola o zdna l3osba
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+        <div class="mt-3">
+          <div id="palmaresCarousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="assets/images/palmares/carousel-1.svg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/images/palmares/carousel-2.svg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="assets/images/palmares/carousel-3.svg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <p class="mb-2">
+              Le Wydad Athletic Club, également connu sous le nom du Wydad
+              Casablanca, est l’un des clubs de football les plus réputés et
+              décorés du Maroc. Fondé le 8 mai 1937 à Casablanca, le club a
+              accumulé un palmarès impressionnant, avec de nombreux triomphes
+              tant au niveau national qu’international. Avec 22 titres de la
+              Botola, 9 victoires en Coupe du Trône et une Coupe de
+              l’Indépendance, le Wydad a dominé le football marocain. Sur la
+              scène internationale, le club a remporté trois fois la CAF
+              Champions League, ainsi que de nombreux autres trophées
+              prestigieux. Revenons sur l’histoire glorieuse du Wydad Athletic
+              Club.
+            </p>
+            <p class="mb-2">
+              Le Wydad Athletic Club, au fil de son histoire, a laissé une
+              empreinte indélébile dans le football marocain. Le club a conquis
+              de nombreux titres nationaux et internationaux, faisant de lui
+              l’un des clubs les plus couronnés du Maroc.
+            </p>
+            <p class="mb-2">
+              Au niveau national, le Wydad a remporté la Botola à 22 reprises,
+              avec des victoires s’étalant sur plusieurs décennies. Les
+              triomphes ont commencé en 1948 et se sont poursuivis jusqu’à la
+              saison 2021-2022. Ces victoires témoignent de la domination
+              constante du club sur la scène nationale. En plus de ses succès en
+              championnat, le Wydad a également remporté la Coupe du Trône à
+              neuf reprises, élevant son statut de club dominant. En 1956, le
+              club a également remporté la Coupe de l’Indépendance, ajoutant
+              ainsi un autre trophée à son palmarès.
+            </p>
+            <p class="mb-2">
+              Le Wydad a également connu un succès significatif dans les
+              compétitions internationales. La CAF Champions League, la plus
+              prestigieuse compétition de clubs en Afrique, a été remportée par
+              le club à trois reprises. Le Wydad a soulevé le trophée en 1992,
+              en 2017 et plus récemment en 2022. Ces victoires ont permis au
+              club de se hisser parmi l’élite du football africain. En outre, le
+              Wydad a également remporté la Coupe de la Confédération Africaine
+              en 2002, ainsi que la Supercoupe Africaine en 2018. Ces succès ont
+              renforcé la position du Wydad en tant que club compétitif sur la
+              scène continentale.
+            </p>
+            <p class="mb-2">
+              En dehors de l’Afrique, le Wydad a également marqué son empreinte.
+              En 1993, le club a remporté la Coupe Afro-Asiatique, mettant en
+              valeur sa qualité et son potentiel au-delà du continent africain.
+              De plus, le Wydad a remporté la Ligue des champions Arabes en 1989
+              et la Supercoupe Arabe en 1992, témoignant de sa renommée
+              régionale. Le club a également triomphé dans le Championnat
+              d’Afrique du Nord à trois reprises (en 1948, 1949 et 1950), ainsi
+              que dans d’autres compétitions régionales telles que la Supercoupe
+              de l’Afrique du Nord en 1948 et 1949, et la Coupe d’Afrique du
+              Nord en 1949. Enfin, en 1979, le Wydad a remporté la Coupe
+              Mohammed V, un autre trophée majeur dans son palmarès.
+            </p>
+            <p class="mb-2">
+              En plus de ces compétitions majeures, le Wydad a également
+              remporté plusieurs autres titres nationaux et amicaux. Parmi eux,
+              on compte la Ligue du Chaouia (remportée 4 fois), la Coupe d’Élite
+              du Maroc (2 fois), la Coupe de Casablanca (2 fois), le Championnat
+              de Promotion – Groupe Centre, le championnat de deuxième division,
+              le Criterium du Maroc (Zone Sud) et la Coupe du 16 Novembre. Le
+              club a également connu des succès dans divers tournois amicaux,
+              tels que le Tournoi Ahmed Antifi (remporté 10 fois), le Tournoi de
+              la Fête du Trône, le Tournoi de la Marche Verte, le Tournoi
+              International de Meknès, le Tournoi d’Indépendance et la Coupe
+              Internationale de Tabouk.
+            </p>
+            <p class="mb-2">
+              Outre ses réalisations sur le terrain, le Wydad a également été
+              marqué par la présence de joueurs exceptionnels au fil des ans.
+              Des noms tels que Moussa Ndaw, Abdelmajid Shaita, Fakhreddine
+              Rajhi, Badr El Kaddouri, Noureddine Naybet, Aziz Bouderbala,
+              Yassine Bounou et Fabrice Ondama ont écrit des pages glorieuses de
+              l’histoire du club. Ces joueurs talentueux ont contribué aux
+              succès du Wydad et ont fait briller ses couleurs.
+            </p>
+            <p class="mb-2">
+              Enfin, la rivalité légendaire entre le Wydad et le Raja Club
+              Athletic, l’autre grand club de Casablanca, a marqué l’histoire du
+              football marocain. Les matchs entre ces deux clubs suscitent une
+              passion intense et rassemblent de grandes foules de supporters. Le
+              Wydad bénéficie également d’un soutien inconditionnel de la part
+              de ses fans, qui remplissent régulièrement le stade Mohammed V
+              lors des matchs locaux et internationaux. Le Wydad reste un pilier
+              du football marocain, inspirant une nouvelle génération de joueurs
+              et de fans à poursuivre leur passion pour ce sport magnifique.
+            </p>
+            <p>
+              Le Wydad Athletic Club a laissé une empreinte indélébile dans le
+              football marocain. Avec un palmarès impressionnant de titres
+              nationaux et internationaux, le club a prouvé sa domination sur la
+              scène locale et continentale. Son histoire glorieuse, ses joueurs
+              talentueux et sa rivalité avec le Raja Club Athletic en font l’un
+              des clubs les plus vénérés au Maroc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="palmares-banner my-5">
+      <div
+        class="top-banner position-absolute z-2 d-flex flex-column align-items-center"
+      >
+        <img src="assets/images/logo/logo.svg" alt="" />
+        <h1
+          class="text-white text-capitalize text-center fs-3 fw-bold second-font-family"
+        >
+          wydad athletic club
+        </h1>
+        <div class="d-flex align-items-center text-white">
+          <i class="fa-solid fa-trophy text-yellow"></i>
+          <h4 class="mx-3 my-0 fs-5 fw-bold text-uppercase third-font-family">
+            plamarès
+          </h4>
+          <i class="fa-solid fa-trophy text-yellow"></i>
+        </div>
+      </div>
+
+      <div class="palmares-sec w-100 position-absolute z-2">
+        <div class="palmares-swp mySwiper position-relative overflow-hidden">
+          <div class="swiper-wrapper palmares">
+            <div
+              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
+            >
+              <span class="badge bg-red fs-5 third-font-family">22</span>
+              <img
+                src="assets/images/palmares/botola-pro.svg"
+                alt="botola pro img"
+                class="w-100"
+              />
+              <div
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
+              >
+                Botola pro
+              </div>
+            </div>
+            <div
+              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
+            >
+              <span class="badge bg-red fs-5 third-font-family">3</span>
+              <img
+                src="assets/images/palmares/CAF-Champions-League.svg"
+                alt="CAF Champions League img"
+                class="w-100"
+              />
+              <div
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
+              >
+                CAF Champions League
+              </div>
+            </div>
+            <div
+              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
+            >
+              <span class="badge bg-red fs-5 third-font-family">9</span>
+              <img
+                src="assets/images/palmares/Coupe-du-trone.svg"
+                alt="Coupe du trone img"
+                class="w-100"
+              />
+              <div
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
+              >
+                Coupe du trône
+              </div>
+            </div>
+            <div
+              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
+            >
+              <span class="badge bg-red fs-5 third-font-family">1</span>
+              <img
+                src="assets/images/palmares/Coupe-de-la-Confederation-Africaine.svg"
+                alt="Coupe de la Confederation Africaine img"
+                class="w-100"
+              />
+              <div
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
+              >
+                Confédération Africaine
+              </div>
+            </div>
+            <div
+              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
+            >
+              <span class="badge bg-red fs-5 third-font-family">1</span>
+              <img
+                src="assets/images/palmares/Supercoupe-Africaine.svg"
+                alt="Supercoupe Africaine img"
+                class="w-100"
+              />
+              <div
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
+              >
+                Supercoupe Africaine
+              </div>
+            </div>
+            <div
+              class="swiper-slide single-palmares text-center d-flex flex-column align-items-center"
+            >
+              <span class="badge bg-red fs-5 third-font-family">1</span>
+              <img
+                src="assets/images/palmares/Ligue-des-Champions-Arabe.svg"
+                alt="Ligue des Champions Arabe img"
+                class="w-100"
+              />
+              <div
+                class="single-palmares-title my-2 badge bg-white text-red fs-5 third-font-family"
+              >
+                Champion d'Arabe
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              les titres importants
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+        <div class="mt-4">
+          <div class="mb-4">
+            <h3 class="mb-3 fs-4 fw-bold text-red third-font-family">
+              Compétitions nationales (32)
+            </h3>
+            <div>
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Botola (22) :</span> 1948,
+                1949, 1950, 1951, 1955, 1957, 1966, 1969, 1976, 1977, 1978,
+                1986, 1990, 1991, 1993, 2006, 2010, 2015, 2017, 2019, 2021 et
+                2022
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Coupe du trône (9) :</span>
+                1970, 1978, 1979, 1981, 1989, 1994, 1997, 1998 et 2001
+              </p>
+              <p>
+                <span class="fw-bolder text-black"
+                  >Coupe de l’indépendance :</span
+                >
+                1956
+              </p>
+            </div>
+          </div>
+          <div class="mb-4 row">
+            <h3 class="mb-3 fs-4 fw-bold text-red third-font-family">
+              Compétitions internationales (15)
+            </h3>
+            <div class="col-md-6">
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >CAF Champions League (3) :</span
+                >
+                1992, 2017 et 2022
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe de la Confédération Africaine :</span
+                >
+                2002
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Supercoupe Africaine :</span>
+                2018
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Coupe Afro-Asiatique :</span>
+                1993
+              </p>
+              <p>
+                <span class="fw-bolder text-black"
+                  >Ligue des Champions Arabe :
+                </span>
+                1989
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Supercoupe Arabe :</span>
+                1992
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Championnat d’Afrique du Nord (3) :</span
+                >
+                1948, 1949 et 1950
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Supercoupe de l’Afrique du Nord (2) :</span
+                >
+                1948 et 1949
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe d’Afrique du Nord :</span
+                >
+                1949
+              </p>
+              <p>
+                <span class="fw-bolder text-black">Coupe Mohammed V : </span>
+                1979
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              autres titres
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+        <div class="mt-4">
+          <div class="mb-4 row">
+            <h3 class="mb-3 fs-4 fw-bold text-red third-font-family">
+              Compétitions nationales (13)
+            </h3>
+            <div class="col-md-6">
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Ligue du Chaouia (4) :</span>
+                1939, 1944, 1945 et 1946
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe d’Élite du Maroc (2) :</span
+                >
+                1945 et 1948
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe de Casablanca (2) :</span
+                >
+                1947 et 1948
+              </p>
+              <p>
+                <span class="fw-bolder text-black"
+                  >Championnat de Promotion – Groupe Centre :</span
+                >
+                1942
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Division 2 du Championnat :</span
+                >
+                1942
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Criterium du Maroc (Zone Sud) :</span
+                >
+                1946
+              </p>
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Coupe du 16 Novembre :</span>
+                1955
+              </p>
+              <p>
+                <span class="fw-bolder text-black"
+                  >Coupe de l’Indépendance :</span
+                >
+                1956
+              </p>
+            </div>
+          </div>
+          <div class="mb-4 row">
+            <h3 class="mb-3 fs-4 fw-bold text-red third-font-family">
+              Compétitions amicales (28)
+            </h3>
+            <div class="col-md-6">
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi Ahmed Antifi (10) :</span
+                >
+                1988, 1990, 1994, 1995, 1997, 1999, 2000, 2007, 2017 et 2021
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi Fête Aïd Seghir :</span
+                >
+                1941
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Tournoi Fête Mouloud :</span>
+                1941
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi Fête du Trône :</span
+                >
+                1941
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Tournoi Nouvel An :</span>
+                1944
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Tournoi de Noël (2) :</span>
+                1944 et 1945
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Tournoi de Rabat :</span>
+                1946
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black">Tournoi de Sixte :</span>
+                1946
+              </p>
+
+              <p>
+                <span class="fw-bolder text-black">Tournoi de la Police :</span>
+                1969
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi de la Marche Verte :</span
+                >
+                1975
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi International de Meknès :</span
+                >
+                1979
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi d’Indépendance :</span
+                >
+                1983
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe International de Pescara :</span
+                >
+                1988
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi International d’El Jedida :</span
+                >
+                1989
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe International de Dalas :</span
+                >
+                1996
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Tournoi feu Belhachmi :</span
+                >
+                2003
+              </p>
+
+              <p class="mb-1">
+                <span class="fw-bolder text-black"
+                  >Coupe International Vicente Lucas :</span
+                >
+                2014
+              </p>
+
+              <p>
+                <span class="fw-bolder text-black"
+                  >Coupe International de Tabouk :</span
+                >
+                2016
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-red">
+      <div class="container">
+        <div class="py-5">
+          <div class="mb-4 d-flex flex-column align-items-center">
+            <a href="#"
+              ><img src="assets/images/logo/white-logo.svg" alt=""
+            /></a>
+            <h1 class="mt-2 fs-4 text-white text-center third-font-family">
+              Porter le maillot du Wydad est un honneur <br />
+              Le mouiller est un devoir
+            </h1>
+          </div>
+          <div class="main-footer mt-2 row">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                wydad athletic club
+              </h3>
+              <p class="fs-6 text-white">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consectetur, modi error? Nihil deserunt modi, rem dolor
+                laudantium corporis officiis aliquid.
+              </p>
+              <ul class="social-link d-flex ps-0">
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-facebook-f"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-instagram"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-x-twitter"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-youtube"></i></li
+                ></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                lien rapide
+              </h3>
+              <ul class="ps-0 quick-link">
+                <a href="#"><li class="text-white">Accueil</li></a>
+                <a href="#"><li class="text-white">A propos</li></a>
+                <a href="#"><li class="text-white">Boutique</li></a>
+                <a href="#"><li class="text-white">Effectif</li></a>
+                <a href="#"><li class="text-white">News</li></a>
+                <a href="#"><li class="text-white">Contact</li></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                Contact infos
+              </h3>
+              <ul class="contact-info ps-0">
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5 class="ms-2 mb-0">Adresse</h5>
+                  </div>
+                  <p class="text-white mb-0">
+                    Complexe Sportif Haj Mohamed Benjelloun
+                  </p>
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h5 class="ms-2 mb-0">Mail</h5>
+                  </div>
+                  <a
+                    href="mailto:contact@wydadathleticclub.com"
+                    class="text-white"
+                    >contact@wydadathleticclub.com</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <h5 class="ms-2 mb-0">Téléphone</h5>
+                  </div>
+                  <a href="tel:0612345678" class="text-white"
+                    >+212 612 345 678</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom py-2 border-top text-center">
+          <p class="mb-0 text-white">
+            &copy;
+            <span class="fw-bold text-capitalize text-yellow second-font-family"
+              >wydad athletic club</span
+            >, All Right Reserved. Designed By
+            <a href="#" class="text-white text-decoration-underline"
+              >Yassine_ChM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- link to files js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js.map"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>

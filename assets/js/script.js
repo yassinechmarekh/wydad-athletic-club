@@ -20,3 +20,10 @@ function close_cart() {
   cart.classList.remove("active");
   bg_overlay.classList.remove("active");
 }
+
+// palmares carousel
+var palmaresCarousel = document.getElementById("palmaresCarousel");
+var carousel = new bootstrap.Carousel(palmaresCarousel, {
+  interval: 2500,
+  ride: "carousel",
+});
