@@ -84,3 +84,27 @@ const products_swp = new Swiper('.products-swp', {
     },
   },
 });
+
+const blogs_swp = new Swiper('.blogs-swp', {
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 10,
+  autoplay: {
+    delay: 3500,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    1000: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+});

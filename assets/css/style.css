@@ -461,12 +461,65 @@ figure figcaption {
   line-height: 1.2;
 }
 
-.all-products .single-product{
+.all-products .single-product {
   width: calc((100% / 4) - 12px);
 }
 
+.single-blog img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.single-blog .blog-proposed-img,
+.single-blog .blog-popular-img,
+.single-blog .blog-propose-img {
+  height: 180px;
+}
+
+.single-blog .card-body h6 {
+  font-size: 13px !important;
+}
+
+.single-blog .card-body .card-text {
+  font-size: 14px !important;
+}
+
+.blogs-swp .btn::after {
+  color: #fff !important;
+  font-size: 16px !important;
+}
+
+.blogs-swp .btn {
+  position: absolute;
+  top: 30px;
+  height: 35px;
+}
+
+.blogs-swp .swiper-button-next.btn {
+  right: 0;
+}
+
+.blogs-swp .swiper-button-prev.btn {
+  left: calc(100% - 60px);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--red-color) !important;
+  border-color: var(--red-color);
+}
+
+.pagination * {
+  border-color: var(--red-color);
+}
+
+.pagination .page-item .page-link:hover,
+.pagination .page-item.disabled .page-link {
+  color: var(--red-color) !important;
+  border-color: var(--red-color);
+}
+
 @media (max-width: 1200px) {
-  .all-products .single-product{
+  .all-products .single-product {
     width: calc((100% / 3) - 11px);
   }
 }
@@ -490,12 +543,15 @@ figure figcaption {
     margin: 0 auto !important;
     margin-bottom: 10px !important;
   }
-  .all-products .single-product{
+  .all-products .single-product {
     width: calc((100% / 2) - 8px);
+  }
+  .single-blog .blog-popular-img {
+    height: 250px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .top-page {
     height: 250px;
   }
@@ -504,6 +560,9 @@ figure figcaption {
   }
   .top-page div {
     left: 50% !important;
+  }
+  .single-blog .blog-propose-img {
+    height: 250px;
   }
 }
 
@@ -525,7 +584,7 @@ figure figcaption {
   .palmares-sec .palmares .single-palmares img {
     width: 300px !important;
   }
-  .all-products .single-product{
+  .all-products .single-product {
     width: calc(100%);
   }
 }
