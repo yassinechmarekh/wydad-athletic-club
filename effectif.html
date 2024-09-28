@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- website title -->
+    <title>Wydad Athletic Club</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
+    <!-- link to files css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div
+      class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+      id="loader-container"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
+
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
+          </ul>
+          <h1
+            class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize"
+          >
+            wydad athletic club
+          </h1>
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="#">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" aria-current="page" href="#"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Histoire</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Palmares</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Boutique</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="#">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Tout</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Président</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Entraîneur</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Joueurs</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">News</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-1.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-1-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-2.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-2-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Troisième maillot de match Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div
+          class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center"
+        >
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase"
+            >checkout</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    <!-- start top-page -->
+    <section class="top-page position-relative overflow-hidden">
+      <img
+        src="assets/images/banners/top-page.svg"
+        alt=""
+        class="mx-0 position-absolute top-0 w-100 h-100"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-white text-center"
+      >
+        <h2 class="fs-3 fw-bold text-capitalize third-font-family">Effectif</h2>
+        <div class="d-flex align-items-center justify-content-center">
+          <a href="#" class="text-white"
+            ><h5 class="mb-0 text-capitalize">accueil</h5></a
+          >
+          <i class="fa-regular fa-futbol mx-2"></i>
+          <h5 class="mb-0 text-capitalize">Effectif</h5>
+        </div>
+      </div>
+    </section>
+    <!-- end top-page -->
+
+    <div class="my-3 all-products mx-2 mx-sm-0">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              Notre Effectif
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+        <div class="mt-4">
+          <img src="assets/images/effectif/effectif.svg" alt="" class="w-100" />
+
+          <div class="mt-2">
+            <p class="mb-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              vel corporis mollitia deleniti laborum exercitationem. Non
+              deserunt esse recusandae adipisci ipsam.
+            </p>
+            <p class="mb-2">
+              Quasi similique voluptate eos culpa fuga voluptas ea optio ducimus
+              aliquam architecto ullam hic dignissimos distinctio laudantium
+              consequuntur! Soluta nostrum, qui minima, debitis, distinctio
+              libero dolore a velit ratione quisquam sequi doloremque? Nisi
+              nihil expedita consequuntur totam animi minus et libero, quaerat
+              nemo at inventore molestias dicta? Neque excepturi minima, ea
+              eveniet sint aut vel maiores facere rerum esse? Repudiandae
+              dolorum assumenda aliquid optio sunt nobis, unde vel ab velit
+              itaque facilis accusantium perferendis nostrum ea eum laboriosam.
+              Accusamus atque esse dignissimos? Doloribus sequi, nobis laborum
+              eaque soluta beatae. Similique, hic illum neque voluptate minima
+              temporibus repellat rerum beatae odit soluta architecto fugit
+              possimus maxime earum molestiae inventore, amet cupiditate autem
+              dignissimos exercitationem pariatur repellendus unde accusantium
+              voluptatibus. Magnam illo veritatis minus eius unde. Obcaecati cum
+              consequuntur dolorem voluptatibus consectetur autem laboriosam
+              facilis atque cumque ut numquam laudantium expedita a voluptatem
+              voluptates est amet quaerat, quod et impedit itaque odio omnis
+              necessitatibus eius. Aliquam reprehenderit ex natus eaque fuga
+              cupiditate repellat at eveniet, sequi ad aliquid omnis quas
+              mollitia quasi, sed, porro distinctio. Enim, culpa minus! Fugit,
+              nam sequi?
+            </p>
+            <p class="mb-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              consectetur consequuntur ratione quia fugiat dolor necessitatibus
+              consequatur temporibus, inventore, voluptatem assumenda explicabo
+              unde! Fugit perspiciatis incidunt, aliquid ipsum, adipisci
+              voluptatem voluptatum ad quas laboriosam odit cupiditate aut sunt
+              maiores consequuntur soluta dicta libero illo atque veritatis
+              facilis ex non odio corporis. Dolorum dolores harum totam saepe
+              nam possimus nisi quaerat voluptates cumque velit, iste esse
+              nostrum rerum itaque error dolore, sed libero aliquid fuga. Magni
+              corrupti omnis rem quis quidem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+              at omnis ut in mollitia, aspernatur, maxime eaque incidunt,
+              voluptatum optio obcaecati! Voluptate beatae veritatis facere vel
+              magnam natus iusto autem!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="productModal"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content position-relative">
+          <div class="modal-header">
+            <h1
+              class="modal-title fs-5 fw-bold text-red"
+              id="exampleModalToggleLabel"
+            >
+              Détails du produit
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body row">
+            <div class="col-md-6">
+              <img
+                src="assets/images/products/cart-1.svg"
+                alt=""
+                class="w-100"
+              />
+            </div>
+            <div class="col-md-6 mt-2 mt-lg-0 d-flex flex-column">
+              <h1 class="fs-4">
+                Carte d'abonnement à tous les matches à domicile du WAC au
+                virage du nord.
+              </h1>
+              <div class="d-flex align-items-end">
+                <h4 class="fs-5 fw-bold text-red me-1">600 Dhs</h4>
+                <h4 class="fs-6 text-decoration-line-through">700 Dhs</h4>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                ad doloribus corporis cupiditate mollitia. Iste, excepturi culpa
+                harum reiciendis fugit explicabo adipisci cupiditate aliquam
+                sint, animi repellat officia officiis inventore?
+              </p>
+              <div class="d-flex">
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="10"
+                  step="1"
+                  class="me-2 qty"
+                />
+                <button
+                  type="button"
+                  class="btn btn-danger d-flex align-items-center"
+                >
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <span class="ms-2">Ajouter au panier</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-red">
+      <div class="container">
+        <div class="py-5">
+          <div class="mb-4 d-flex flex-column align-items-center">
+            <a href="#"
+              ><img src="assets/images/logo/white-logo.svg" alt=""
+            /></a>
+            <h1 class="mt-2 fs-4 text-white text-center third-font-family">
+              Porter le maillot du Wydad est un honneur <br />
+              Le mouiller est un devoir
+            </h1>
+          </div>
+          <div class="main-footer mt-2 row">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                wydad athletic club
+              </h3>
+              <p class="fs-6 text-white">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consectetur, modi error? Nihil deserunt modi, rem dolor
+                laudantium corporis officiis aliquid.
+              </p>
+              <ul class="social-link d-flex ps-0">
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-facebook-f"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-instagram"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-x-twitter"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-youtube"></i></li
+                ></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                lien rapide
+              </h3>
+              <ul class="ps-0 quick-link">
+                <a href="#"><li class="text-white">Accueil</li></a>
+                <a href="#"><li class="text-white">A propos</li></a>
+                <a href="#"><li class="text-white">Boutique</li></a>
+                <a href="#"><li class="text-white">Effectif</li></a>
+                <a href="#"><li class="text-white">News</li></a>
+                <a href="#"><li class="text-white">Contact</li></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                Contact infos
+              </h3>
+              <ul class="contact-info ps-0">
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5 class="ms-2 mb-0">Adresse</h5>
+                  </div>
+                  <p class="text-white mb-0">
+                    Complexe Sportif Haj Mohamed Benjelloun
+                  </p>
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h5 class="ms-2 mb-0">Mail</h5>
+                  </div>
+                  <a
+                    href="mailto:contact@wydadathleticclub.com"
+                    class="text-white"
+                    >contact@wydadathleticclub.com</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <h5 class="ms-2 mb-0">Téléphone</h5>
+                  </div>
+                  <a href="tel:0612345678" class="text-white"
+                    >+212 612 345 678</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom py-2 border-top text-center">
+          <p class="mb-0 text-white">
+            &copy;
+            <span class="fw-bold text-capitalize text-yellow second-font-family"
+              >wydad athletic club</span
+            >, All Right Reserved. Designed By
+            <a href="#" class="text-white text-decoration-underline"
+              >Yassine_ChM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- link to files js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js.map"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>
