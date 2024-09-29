@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- website title -->
+    <title>Wydad Athletic Club</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
+    <!-- link to files css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div
+      class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+      id="loader-container"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
+
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="#"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
+          </ul>
+          <h1
+            class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize"
+          >
+            wydad athletic club
+          </h1>
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="#">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" aria-current="page" href="#"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Histoire</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Palmares</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Boutique</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="#">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Tout</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Président</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Entraîneur</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="#">Joueurs</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">News</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-1.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-1-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-2.jpg"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-2-1.jpg"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Troisième maillot de match Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div
+          class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center"
+        >
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase"
+            >checkout</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    <!-- start top-page -->
+    <section class="top-page position-relative overflow-hidden">
+      <img
+        src="assets/images/banners/top-page.svg"
+        alt=""
+        class="mx-0 position-absolute top-0 w-100 h-100"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-white text-center"
+      >
+        <h2 class="fs-3 fw-bold text-capitalize third-font-family">Joueurs</h2>
+        <div class="d-flex align-items-center justify-content-center">
+          <a href="#" class="text-white"
+            ><h5 class="mb-0 text-capitalize">accueil</h5></a
+          >
+          <i class="fa-regular fa-futbol mx-2"></i>
+          <h5 class="mb-0 text-capitalize">Joueurs</h5>
+        </div>
+      </div>
+    </section>
+    <!-- end top-page -->
+
+    <div class="my-3">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              les joueurs les joueurs 3likom ra hna 3walaa
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="my-5">
+      <div class="container">
+        <div class="players-swp mySwiper position-relative overflow-hidden">
+          <h1
+            class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+          >
+            <span class="text-red">Gardiens</span> de But
+          </h1>
+          <div class="swiper-wrapper players">
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/Golkeepers/Youssef-El-Motie.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Youssef El Motie</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Golkeepers</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>32</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/Golkeepers/Abdelali-M'Hamdi.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Abdelali M'Hamdi</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Golkeepers</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>12</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/Golkeepers/Boubacar-Bah.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Boubacar Bah</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Golkeepers</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>40</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/Golkeepers/Omar-Aqzdaou.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Omar Aqzdaou</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Golkeepers</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>36</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev btn btn-danger btn-sm"></div>
+          <div class="swiper-button-next btn btn-danger btn-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <div class="container">
+        <div class="players-swp mySwiper position-relative overflow-hidden">
+          <h1
+            class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+          >
+            <span class="text-red">Défenseurs</span>
+          </h1>
+          <div class="swiper-wrapper players">
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Jamal Harkass.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Jamal Harkass</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>16</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Marmouk Nabil.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Marmouk Nabil</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>4</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Ayman Dairani.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Ayman Dairani</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>13</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Abdelmounaim Boutouil.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">A. Boutouil</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>37</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Mohamed Moufid.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Mohamed Moufid</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>2</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Zakaria Nassik.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Zakaria Nassik</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>3</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/defenders/Ayoub Boucheta.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Ayoub Boucheta</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Défenseur</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>24</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Clean Sheet</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/clean-sheat.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assist</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev btn btn-danger btn-sm"></div>
+          <div class="swiper-button-next btn btn-danger btn-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <div class="container">
+        <div class="players-swp mySwiper position-relative overflow-hidden">
+          <h1
+            class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+          >
+            <span class="text-red">Milieu</span> de terrain
+          </h1>
+          <div class="swiper-wrapper players">
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/El-Mehdi-El-Moubarik.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">El Mehdi El Moubarik</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>19</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Hamza-Sakhi.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Hamza Sakhi</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>22</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Arthur-Wenderroscky-Sanches.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Arthur Wenderroscky</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>10</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Pedro-Henrique-de-Assis.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Pedro Henrique de Assis</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>33</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Oussama-Zemraoui.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Oussama Zemraoui</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>23</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Mouad-Aounzou.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Mouad Aounzou</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>20</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Sidi-Bouna-Amar.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Sidi Bouna Amar</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>19</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/midfielders/Mounir-El-Habach.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Mounir El Habach</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Milieu</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>6</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev btn btn-danger btn-sm"></div>
+          <div class="swiper-button-next btn btn-danger btn-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-5">
+      <div class="container">
+        <div class="players-swp mySwiper position-relative overflow-hidden">
+          <h1
+            class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+          >
+            <span class="text-red">Attaquants</span> de but
+          </h1>
+          <div class="swiper-wrapper players">
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/M’Baye-Niang.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">M’Baye Niang</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>9</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Renan-Rodrigues-Fonseca-Viana.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Renan Viana</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>7</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Nassim-Chadli.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Nassim Chadli</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>28</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Walid-Nassi.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Walid Nassi</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>11</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Mohamed-Rayhi.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Mohamed Rayhi</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>8</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Cassius-Tumelo-Mailula.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Cassius Mailula</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>21</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Chouaib-Faidi.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Chouaib Faidi</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>37</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="swiper-slide card single-player">
+              <img
+                src="assets/images/players/forwards/Zacarías-Ghailán.svg"
+                class="card-img-top player-img"
+                alt="..."
+              />
+              <div class="card-body row align-items-center">
+                <div class="col-9">
+                  <h4 class="fs-5">Zacarías Ghailán</h4>
+                  <h5 class="fs-6 mb-0 fw-bolder text-red">Attaquant</h5>
+                </div>
+                <div class="col-3 fs-5 fw-bold text-center text-red">
+                  <h2>17</h2>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Matchs</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">246</h4>
+                    <img
+                      src="assets/images/icons/match.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">Assistes</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">90</h4>
+                    <img
+                      src="assets/images/icons/assist.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <span class="text-capitalize">But</span>
+                  <div class="d-flex align-items-center gap-1">
+                    <h4 class="mb-0 fs-6 fw-bold text-red">3</h4>
+                    <img
+                      src="assets/images/icons/goal.svg"
+                      alt=""
+                      class="statistic-icon"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev btn btn-danger btn-sm"></div>
+          <div class="swiper-button-next btn btn-danger btn-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-red">
+      <div class="container">
+        <div class="py-5">
+          <div class="mb-4 d-flex flex-column align-items-center">
+            <a href="#"
+              ><img src="assets/images/logo/white-logo.svg" alt=""
+            /></a>
+            <h1 class="mt-2 fs-4 text-white text-center third-font-family">
+              Porter le maillot du Wydad est un honneur <br />
+              Le mouiller est un devoir
+            </h1>
+          </div>
+          <div class="main-footer mt-2 row">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                wydad athletic club
+              </h3>
+              <p class="fs-6 text-white">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consectetur, modi error? Nihil deserunt modi, rem dolor
+                laudantium corporis officiis aliquid.
+              </p>
+              <ul class="social-link d-flex ps-0">
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-facebook-f"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-instagram"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-x-twitter"></i></li
+                ></a>
+                <a href="#"
+                  ><li class="mx-2"><i class="fa-brands fa-youtube"></i></li
+                ></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                lien rapide
+              </h3>
+              <ul class="ps-0 quick-link">
+                <a href="#"><li class="text-white">Accueil</li></a>
+                <a href="#"><li class="text-white">A propos</li></a>
+                <a href="#"><li class="text-white">Boutique</li></a>
+                <a href="#"><li class="text-white">Effectif</li></a>
+                <a href="#"><li class="text-white">News</li></a>
+                <a href="#"><li class="text-white">Contact</li></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                Contact infos
+              </h3>
+              <ul class="contact-info ps-0">
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5 class="ms-2 mb-0">Adresse</h5>
+                  </div>
+                  <p class="text-white mb-0">
+                    Complexe Sportif Haj Mohamed Benjelloun
+                  </p>
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h5 class="ms-2 mb-0">Mail</h5>
+                  </div>
+                  <a
+                    href="mailto:contact@wydadathleticclub.com"
+                    class="text-white"
+                    >contact@wydadathleticclub.com</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <h5 class="ms-2 mb-0">Téléphone</h5>
+                  </div>
+                  <a href="tel:0612345678" class="text-white"
+                    >+212 612 345 678</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom py-2 border-top text-center">
+          <p class="mb-0 text-white">
+            &copy;
+            <span class="fw-bold text-capitalize text-yellow second-font-family"
+              >wydad athletic club</span
+            >, All Right Reserved. Designed By
+            <a href="#" class="text-white text-decoration-underline"
+              >Yassine_ChM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- link to files js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js.map"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>

@@ -484,21 +484,25 @@ figure figcaption {
   font-size: 14px !important;
 }
 
+.players-swp .btn::after,
 .blogs-swp .btn::after {
   color: #fff !important;
   font-size: 16px !important;
 }
 
+.players-swp .btn,
 .blogs-swp .btn {
   position: absolute;
   top: 30px;
   height: 35px;
 }
 
+.players-swp .swiper-button-next.btn,
 .blogs-swp .swiper-button-next.btn {
   right: 0;
 }
 
+.players-swp .swiper-button-prev.btn,
 .blogs-swp .swiper-button-prev.btn {
   left: calc(100% - 60px);
 }
@@ -518,28 +522,32 @@ figure figcaption {
   border-color: var(--red-color);
 }
 
-.contact-form{
+.contact-form {
   border-color: var(--red-color) !important;
 }
 
 textarea,
-input{
+input {
   border-color: var(--red-color) !important;
 }
 
 textarea:focus,
-input:focus{
-  box-shadow: 0 0 0 .25rem #db10021b !important;
+input:focus {
+  box-shadow: 0 0 0 0.25rem #db10021b !important;
 }
 
 textarea:focus::placeholder,
-input:focus::placeholder{
+input:focus::placeholder {
   color: var(--red-color);
 }
 
 label,
-::placeholder{
+::placeholder {
   color: var(--parag-color);
+}
+
+.statistic-icon {
+  width: 25px;
 }
 
 @media (max-width: 1200px) {
@@ -597,6 +605,10 @@ label,
   figure {
     width: 100% !important;
   }
+  .players-swp .btn,
+  .blogs-swp .btn {
+    top: 25px;
+  }
 }
 
 @media (max-width: 550px) {
@@ -611,6 +623,11 @@ label,
   .all-products .single-product {
     width: calc(100%);
   }
+  .players .single-player .player-img {
+    height: 450px;
+    object-fit: cover;
+    object-position: top center;
+  }
 }
 
 @media (max-width: 400px) {
@@ -620,6 +637,9 @@ label,
   }
   .banner-product.second .content p {
     display: none;
+  }
+  .players .single-player .player-img {
+    height: 350px;
   }
 }
 

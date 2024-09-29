@@ -24,11 +24,10 @@ const sponsors_swp = new Swiper(".sponsors-swp", {
   },
 });
 
-
 const palmares_swp = new Swiper(".palmares-swp", {
   loop: true,
   slidesPerView: 4,
-  spaceBeetween:20,
+  spaceBeetween: 20,
   autoplay: {
     delay: 2500,
   },
@@ -54,8 +53,7 @@ const palmares_swp = new Swiper(".palmares-swp", {
   },
 });
 
-
-const products_swp = new Swiper('.products-swp', {
+const products_swp = new Swiper(".products-swp", {
   loop: true,
   slidesPerView: 3,
   spaceBetween: 20,
@@ -63,8 +61,8 @@ const products_swp = new Swiper('.products-swp', {
     delay: 3500,
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
   breakpoints: {
     1200: {
@@ -85,7 +83,7 @@ const products_swp = new Swiper('.products-swp', {
   },
 });
 
-const blogs_swp = new Swiper('.blogs-swp', {
+const blogs_swp = new Swiper(".blogs-swp", {
   loop: true,
   slidesPerView: 3,
   spaceBetween: 10,
@@ -93,14 +91,41 @@ const blogs_swp = new Swiper('.blogs-swp', {
     delay: 3500,
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
   breakpoints: {
     1000: {
       slidesPerView: 3,
     },
     768: {
+      slidesPerView: 2,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+});
+
+const players_swp = new Swiper(".players-swp", {
+  loop: true,
+  slidesPerView: 4,
+  spaceBetween: 20,
+  autoplay: {
+    delay: 3500,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+    550: {
       slidesPerView: 2,
     },
     0: {
