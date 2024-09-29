@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- website title -->
+    <title>Wydad Athletic Club</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
+    <!-- link to files css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div
+      class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+      id="loader-container"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
+
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="https://www.facebook.com/WACofficiel/" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="https://www.instagram.com/wacofficiel/" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="https://x.com/WACofficiel" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="https://www.youtube.com/@WACofficiel" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
+          </ul>
+          <a href="index.html">
+            <h1
+              class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize"
+            >
+              wydad athletic club
+            </h1></a
+          >
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="index.html">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" aria-current="page" href="index.html"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="history.html">Histoire</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="palmares.html">Palmares</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link active" href="shop.html">Boutique</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="index.html">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="effectif.html">Tout</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="president.html">Président</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="coach.html">Entraîneur</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="players.html">Joueurs</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="news.html">News</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-1.webp"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-1-1.webp"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-2.webp"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-2-1.webp"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Troisième maillot de match Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div
+          class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center"
+        >
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase"
+            >checkout</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    <!-- start top-page -->
+    <section class="top-page position-relative overflow-hidden">
+      <img
+        src="assets/images/banners/top-page.webp"
+        alt=""
+        class="mx-0 position-absolute top-0 w-100 h-100"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-white text-center"
+      >
+        <h2 class="fs-3 fw-bold text-capitalize third-font-family">Boutique</h2>
+        <div class="d-flex align-items-center justify-content-center">
+          <a href="index.html" class="text-white"
+            ><h5 class="mb-0 text-capitalize">accueil</h5></a
+          >
+          <i class="fa-regular fa-futbol mx-2"></i>
+          <h5 class="mb-0 text-capitalize">Boutique</h5>
+        </div>
+      </div>
+    </section>
+    <!-- end top-page -->
+
+    <div class="my-3 all-products mx-2 mx-sm-0">
+      <div class="container">
+        <div class="text-center">
+          <div
+            class="my-2 text-red fw-bold d-flex justify-content-center align-items-center"
+          >
+            <i class="fa-regular fa-futbol"></i>
+            <h1 class="text-capitalize mx-2 my-auto second-font-family">
+              Découvrez les produits de Wydad Athletic Club
+            </h1>
+            <i class="fa-regular fa-futbol"></i>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eius
+            magnam, ipsa atque voluptatibus sapiente, velit iusto expedita,
+            aliquam incidunt quae sed placeat soluta temporibus quos? At
+            consectetur atque omnis.
+          </p>
+        </div>
+        <div class="mt-4">
+          <div class="row gap-3">
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/cart-1.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Virage-Nord</p>
+                <a href="#" class="card-title"
+                  >Carte d'abonnement à tous les matches à domicile du WAC au
+                  virage du nord.</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">600 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      700 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/cart-2.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Gradins EST</p>
+                <a href="#" class="card-title"
+                  >Carte d'abonnement à tous les matches à domicile du WAC au
+                  virage du nord.</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">600 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      700 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/cart-3.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Tribune</p>
+                <a href="#" class="card-title"
+                  >Carte d'abonnement à tous les matches à domicile du WAC au
+                  tribune.</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">2000 Dhs</h6>
+                    <!-- <h6 class="mb-0 fs-6 text-decoration-line-through">2500 Dhs</h6> -->
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/product-3.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                <a href="#" class="card-title"
+                  >Maillot de match domicile adulte Wydad Casablanca 2023/24</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">750 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      800 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/product-1.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                <a href="#" class="card-title"
+                  >Maillot de match extérieur adulte Wydad Casablanca 2023/24</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">750 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      800 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/product-2.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Maillot</p>
+                <a href="#" class="card-title"
+                  >Troisième maillot de match adulte Wydad Casablanca 2023/24</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">750 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      800 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/product-5.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Short</p>
+                <a href="#" class="card-title"
+                  >Short de match rouge adulte Wydad Casablanca 2023/24</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">450 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      500 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-0 card single-product">
+              <div class="card-img-top position-relative overflow-hidden">
+                <a href="#">
+                  <img
+                    src="assets/images/products/product-4.webp"
+                    class="w-100 h-100"
+                    alt="..."
+                  />
+                </a>
+                <div class="hover-btns">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productModal"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text mb-0 fs-6 fw-bold text-red">Short</p>
+                <a href="#" class="card-title"
+                  >Short de match noir adulte Wydad Casablanca 2023/24</a
+                >
+                <p class="count-orders card-text mb-0">Commandes (756)</p>
+                <div
+                  class="bottom-card mt-2 d-flex justify-content-between align-items-center"
+                >
+                  <div class="price d-flex">
+                    <h6 class="me-2 mb-0 fs-6 fw-bold text-red">450 Dhs</h6>
+                    <h6 class="mb-0 fs-6 text-decoration-line-through">
+                      500 Dhs
+                    </h6>
+                  </div>
+                  <button type="button" class="btn btn-danger">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="text-capitalize">ajouter</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="productModal"
+      tabindex="-1"
+      aria-labelledby="productModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content position-relative">
+          <div class="modal-header">
+            <h1
+              class="modal-title fs-5 fw-bold text-red"
+              id="exampleModalToggleLabel"
+            >
+              Détails du produit
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body row">
+            <div class="col-md-6">
+              <img
+                src="assets/images/products/cart-1.webp"
+                alt=""
+                class="w-100"
+              />
+            </div>
+            <div class="col-md-6 mt-2 mt-lg-0 d-flex flex-column">
+              <h1 class="fs-4">
+                Carte d'abonnement à tous les matches à domicile du WAC au
+                virage du nord.
+              </h1>
+              <div class="d-flex align-items-end">
+                <h4 class="fs-5 fw-bold text-red me-1">600 Dhs</h4>
+                <h4 class="fs-6 text-decoration-line-through">700 Dhs</h4>
+              </div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                ad doloribus corporis cupiditate mollitia. Iste, excepturi culpa
+                harum reiciendis fugit explicabo adipisci cupiditate aliquam
+                sint, animi repellat officia officiis inventore?
+              </p>
+              <div class="d-flex">
+                <input
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="10"
+                  step="1"
+                  class="me-2 qty"
+                />
+                <button
+                  type="button"
+                  class="btn btn-danger d-flex align-items-center"
+                >
+                  <i class="fa-solid fa-cart-plus"></i>
+                  <span class="ms-2">Ajouter au panier</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-red">
+      <div class="container">
+        <div class="py-5">
+          <div class="mb-4 d-flex flex-column align-items-center">
+            <a href="index.html"
+              ><img src="assets/images/logo/white-logo.svg" alt=""
+            /></a>
+            <h1 class="mt-2 fs-4 text-white text-center third-font-family">
+              Porter le maillot du Wydad est un honneur <br />
+              Le mouiller est un devoir
+            </h1>
+          </div>
+          <div class="main-footer mt-2 row">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                wydad athletic club
+              </h3>
+              <p class="fs-6 text-white">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consectetur, modi error? Nihil deserunt modi, rem dolor
+                laudantium corporis officiis aliquid.
+              </p>
+              <ul class="social-link d-flex ps-0">
+                <a href="https://www.facebook.com/WACofficiel/" target="_blank"
+                  ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+                ></a>
+                <a href="https://www.instagram.com/wacofficiel/" target="_blank"
+                  ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+                ></a>
+                <a href="https://x.com/WACofficiel" target="_blank"
+                  ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+                ></a>
+                <a href="https://www.youtube.com/@WACofficiel" target="_blank"
+                  ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+                ></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                lien rapide
+              </h3>
+              <ul class="ps-0 quick-link">
+                <a href="index.html"><li class="text-white">Accueil</li></a>
+                <a href="history.html"><li class="text-white">A propos</li></a>
+                <a href="shop.html"><li class="text-white">Boutique</li></a>
+                <a href="effectif.html"><li class="text-white">Effectif</li></a>
+                <a href="news.html"><li class="text-white">News</li></a>
+                <a href="contact.html"><li class="text-white">Contact</li></a>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+              <h3
+                class="fs-4 fw-bold text-yellow text-capitalize second-font-family"
+              >
+                Contact infos
+              </h3>
+              <ul class="contact-info ps-0">
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h5 class="ms-2 mb-0">Adresse</h5>
+                  </div>
+                  <p class="text-white mb-0">
+                    Complexe Sportif Haj Mohamed Benjelloun
+                  </p>
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h5 class="ms-2 mb-0">Mail</h5>
+                  </div>
+                  <a
+                    href="mailto:contact@wydadathleticclub.com"
+                    class="text-white"
+                    >contact@wydadathleticclub.com</a
+                  >
+                </li>
+                <li class="mb-2">
+                  <div class="contact-info-title d-flex align-items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <h5 class="ms-2 mb-0">Téléphone</h5>
+                  </div>
+                  <a href="tel:0612345678" class="text-white"
+                    >+212 612 345 678</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom py-2 border-top text-center">
+          <p class="mb-0 text-white">
+            &copy;
+            <span class="fw-bold text-capitalize text-yellow second-font-family"
+              >wydad athletic club</span
+            >, All Right Reserved. Designed By
+            <a href="https://yassine-chmarekh.vercel.app/" target="_blank" class="text-white text-decoration-underline"
+              >Yassine_ChM</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- link to files js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js.map"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>
