@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- website title -->
+    <title>Wydad Athletic Club</title>
+
+    <!-- website icon -->
+    <link rel="icon" href="assets/images/logo/logo.svg" />
+
+    <!-- link to files css -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div
+      class="position-fixed top-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white"
+      id="loader-container"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <div class="bg-overlay" onclick="close_cart()"></div>
+
+    <!-- start navbar -->
+    <nav>
+      <div class="top-nav bg-red text-white py-2">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <ul class="social-link d-flex ps-0 mb-0">
+            <a href="https://www.facebook.com/WACofficiel/" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-facebook-f"></i></li
+            ></a>
+            <a href="https://www.instagram.com/wacofficiel/" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a href="https://x.com/WACofficiel" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-x-twitter"></i></li
+            ></a>
+            <a href="https://www.youtube.com/@WACofficiel" target="_blank"
+              ><li class="mx-1"><i class="fa-brands fa-youtube"></i></li
+            ></a>
+          </ul>
+          <a href="index.html">
+            <h1
+              class="mb-0 d-none d-sm-block fs-5 fw-bold second-font-family text-white text-capitalize"
+            >
+              wydad athletic club
+            </h1></a
+          >
+          <button
+            onclick="open_cart()"
+            type="button"
+            class="bg-transparent text-white text-capitalize border-0 d-flex align-items-center"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="ms-1">panier (2)</span>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="main-navbar navbar navbar-expand-lg bg-white border border-bottom-1"
+      >
+        <div class="container">
+          <a class="navbar-brand d-block d-lg-none border-0" href="index.html">
+            <img src="assets/images/logo/logo.svg" alt="logo" />
+          </a>
+          <button
+            class="icon-menu d-block d-lg-none bg-transparent border border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item my-auto">
+                <a
+                  class="nav-link text-red"
+                  aria-current="page"
+                  href="index.html"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  A propos
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="history.html"
+                      >Histoire</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="palmares.html"
+                      >Palmares</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="shop.html">Boutique</a>
+              </li>
+              <a class="navbar-brand d-none d-lg-block mx-2" href="index.html">
+                <img src="assets/images/logo/logo.svg" alt="logo" />
+              </a>
+              <li class="nav-item dropdown my-auto">
+                <a
+                  class="nav-link text-red dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Effectif
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item text-red" href="effectif.html"
+                      >Tout</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="president.html"
+                      >Président</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="coach.html"
+                      >Entraîneur</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-red" href="players.html"
+                      >Joueurs</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="news.html">News</a>
+              </li>
+              <li class="nav-item my-auto">
+                <a class="nav-link text-red" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- start cart -->
+    <div
+      class="cart bg-white border-start d-flex flex-column justify-content-between"
+      id="cart"
+    >
+      <div
+        class="top-cart d-flex justify-content-between align-items-center border-bottom"
+      >
+        <div class="close-cart bg-white p-2 border-end" onclick="close_cart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h4 class="my-auto fs-6 fw-bold text-uppercase">panier</h4>
+        <div class="count-item">
+          <span class="bg-white fw-bold p-2 border-start">2</span>
+        </div>
+      </div>
+
+      <div class="items-in-cart px-2 py-3 h-100 overflow-y-auto">
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-1.webp"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-1-1.webp"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Maillot de match extérieur Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+
+        <div
+          class="single-item-in-cart d-flex align-items-start border-bottom py-1"
+        >
+          <a href="#" class="product-img w-25 me-2 position-relative">
+            <img
+              src="assets/images/products/product-2.webp"
+              alt="product-img"
+              class="main-img w-100"
+            />
+            <img
+              class="img-hover"
+              src="assets/images/product-details/product-details-2-1.webp"
+              alt=""
+              class="w-100"
+            />
+          </a>
+          <div class="product-details me-2">
+            <a href="#"
+              ><h6>Troisième maillot de match Wydad Casablanca 2023/24</h6></a
+            >
+            <ul class="mb-0 ps-0">
+              <li>QTY: 1</li>
+              <li>150.00 Dhs</li>
+            </ul>
+          </div>
+          <div class="delete-item">
+            <i class="fa-solid fa-trash-can"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-cart">
+        <div
+          class="total-price bg-white px-2 py-3 border-top d-flex justify-content-between"
+        >
+          <h6 class="my-auto fw-bold text-capitalize">total :</h6>
+          <h6 class="my-auto fw-bold text-red">150.00 Dhs</h6>
+        </div>
+        <div
+          class="btn-cart px-2 py-2 py-sm-3 bg-red d-flex justify-content-center"
+        >
+          <a href="#" class="mx-auto fs-6 fw-bold text-white text-uppercase"
+            >checkout</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- end cart -->
+
+    <div class="img-blog">
+      <img
+        src="assets/images/news/Arthur-Wenderroscky-nouvelle-recrue-bresilienne-du-Wydad-Casablanca-1727175786777.webp"
+        alt=""
+        class="w-100"
+      />
+    </div>
+
+    <div class="main-blog">
+      <div class="container">
+        <div class="mt-4">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="mb-4">
+                <h1 class="fs-2 fw-bold text-red">
+                  Arthur Wenderroscky, nouvelle recrue brésilienne du Wydad
+                  Casablanca
+                </h1>
+                <h4 class="fs-6">
+                  WydadPlus.com - le 24 Septembre 2024 à 23h05
+                </h4>
+              </div>
+              <p>
+                Le Wydad de Casablanca continue de renforcer son effectif avec
+                l’arrivée d’une nouvelle pépite brésilienne, Arthur
+                Wenderroscky, âgé de 19 ans, qui rejoint le club Casablancais en
+                provenance de Fluminense. Ce transfert qualifié de stratégique
+                pour le WAC permettra aux club Rouge et Blanc de briller sur les
+                scènes nationale et internationale.
+              </p>
+              <p>
+                Le club du Wydad de Casablanca a officiellement annoncé, samedi
+                dernier, la signature du jeune milieu offensif brésilien Arthur
+                Wenderroscky. À seulement 19 ans, le joueur, qui évoluait
+                auparavant au sein du célèbre club brésilien Fluminense, fait
+                désormais partie des Rouges, dans une transaction évaluée à 1,5
+                million d’euros. Ce recrutement vient s'ajouter à la liste des
+                nouveaux visages venus du Brésil, avec Pedro Henrique De Assis,
+                surnommé 'Pedrinho', et Renan Viana, renforçant la présence
+                brésilienne au sein de l'effectif.
+              </p>
+              <p>
+                L’arrivée de Wenderroscky au Wydad marque un coup majeur pour le
+                club marocain, qui cherche à s’imposer encore plus sur la scène
+                africaine et internationale. Ce jeune talent, qui impressionne
+                déjà par sa technique et sa vision du jeu, rejoint ses
+                compatriotes Pedrinho et Renan Viana, le dernier ayant été prêté
+                au Wydad par l'Atlético Goias. L'objectif est clair : offrir au
+                Wydad une profondeur d’effectif dans l’entrejeu avec des joueurs
+                capables de s’adapter à divers systèmes de jeu, tout en ajoutant
+                une touche de fraîcheur et de technicité.
+              </p>
+              <p>
+                Alors que la Botola Pro Inwi D1 s'apprête à reprendre ce
+                week-end après la pause internationale, le Wydad de Casablanca
+                affrontera le Moghreb de Tétouan dans ce qui promet d'être un
+                duel très attendu. Lors de ce match, les nouvelles recrues du
+                WAC, dont Wenderroscky, pourraient bien être dévoilées aux
+                supporters avant le coup d'envoi. Ce sera également une occasion
+                pour le club de redorer son blason, après un début de saison en
+                demi-teinte. Les autres rencontres du championnat verront le MAS
+                affronter l’Union de Touarga, tandis que le DHJ, récemment
+                promu, disputera un derby régional face à la RCAZ.
+              </p>
+              <p>
+                Ce recrutement s'inscrit dans une stratégie globale mise en
+                place par le nouveau président du WAC, Hicham Aït Menna.
+                Contrairement à ses prédécesseurs, Aït Menna a choisi de
+                s’éloigner des traditionnels recrutements subsahariens pour se
+                tourner vers l'Amérique du Sud, plus précisément le Brésil,
+                réputé pour produire des joueurs au flair technique
+                incomparable. Depuis sa prise de fonction à l'été dernier, le
+                président a déjà procédé à l'acquisition de 22 joueurs, offrant
+                ainsi à l’entraîneur Rulani Mokwena un effectif élargi pour
+                affronter les nombreux défis à venir. Cette politique de
+                renforcement vise notamment à préparer l'équipe pour la Coupe du
+                monde des clubs, prévue pour l'été 2025, un événement où le
+                Wydad espère briller sur la scène internationale.
+              </p>
+              <p>
+                En conclusion, l’arrivée d’Arthur Wenderroscky confirme
+                l’ambition du Wydad de Casablanca de monter en puissance, en
+                s’appuyant sur des talents jeunes et prometteurs. Avec une
+                politique de recrutement plus internationale, axée sur le marché
+                sud-américain, le club espère se positionner comme un sérieux
+                concurrent dans les compétitions à venir, notamment à l’échelle
+                mondiale. L'association de ces nouveaux joueurs brésiliens au
+                sein de l’équipe devrait offrir aux supporters du Wydad des
+                moments de football excitants dans les mois à venir.
+              </p>
+            </div>
+            <div class="col-lg-4">
+              <h1
+                class="title-product-sec py-2 mb-3 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+              >
+                <span class="text-red">les Derniers</span> articles
+              </h1>
+              <div class="blogs">
+                <div class="card mb-3 single-blog w-100">
+                  <a href="single-blog.html">
+                    <img
+                      src="assets/images/news/Deces-de-Belaid-Bouimid-figure-pionniere-de-la-presse-marocaine-1727211950354.webp"
+                      class="card-img-top blog-popular-img"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <a href="single-blog.html">
+                      <h5 class="card-title text-red fs-6 fw-bold">
+                        Décès de Belaïd Bouimid, figure pionnière de la presse
+                        marocaine
+                      </h5>
+                    </a>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >WydadPlus.com - le 24 Septembre 2024 à 23h05</small
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="card mb-3 single-blog w-100">
+                  <a href="single-blog.html">
+                    <img
+                      src="assets/images/news/Arthur-Wenderroscky-nouvelle-recrue-bresilienne-du-Wydad-Casablanca-1727175786777.webp"
+                      class="card-img-top blog-popular-img"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <a href="#">
+                      <h5 class="card-title text-red fs-6 fw-bold">
+                        Arthur Wenderroscky, nouvelle recrue brésilienne du
+                        Wydad Casablanca
+                      </h5>
+                    </a>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >WydadPlus.com - le 24 Septembre 2024 à 23h05</small
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="card mb-3 single-blog w-100">
+                  <a href="single-blog.html">
+                    <img
+                      src="assets/images/news/undefined-1725061593883.webp"
+                      class="card-img-top blog-popular-img"
+                      alt="..."
+                    />
+                  </a>
+                  <div class="card-body">
+                    <a href="single-blog.html">
+                      <h5 class="card-title text-red fs-6 fw-bold">
+                        Botola Pro : Le WAC débute la saison par une défaite
+                        contre le Moghreb de Fès (1-0)
+                      </h5>
+                    </a>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >WydadPlus.com - le 24 Septembre 2024 à 23h05</small
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="my-3">
+      <div class="container">
+        <div class="blogs-swp mySwiper position-relative overflow-hidden">
+          <h1
+            class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+          >
+            <span class="text-red">Articles</span> proposés
+          </h1>
+          <div class="swiper-wrapper blogs">
+            <div class="swiper-slide card single-blog">
+              <a href="single-blog.html">
+                <img
+                  src="assets/images/news/Deces-de-Belaid-Bouimid-figure-pionniere-de-la-presse-marocaine-1727211950354.webp"
+                  class="card-img-top blog-propose-img"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <a href="single-blog.html">
+                  <h5 class="card-title text-red fs-6 fw-bold">
+                    Décès de Belaïd Bouimid, figure pionnière de la presse
+                    marocaine
+                  </h5>
+                </a>
+                <h6>WydadPlus.com - le 24 Septembre 2024 à 23h05</h6>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide card single-blog">
+              <a href="single-blog.html">
+                <img
+                  src="assets/images/news/Arthur-Wenderroscky-nouvelle-recrue-bresilienne-du-Wydad-Casablanca-1727175786777.webp"
+                  class="card-img-top blog-propose-img"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <a href="single-blog.html">
+                  <h5 class="card-title text-red fs-6 fw-bold">
+                    Arthur Wenderroscky, nouvelle recrue brésilienne du Wydad
+                    Casablanca
+                  </h5>
+                </a>
+                <h6>WydadPlus.com - le 24 Septembre 2024 à 23h05</h6>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide card single-blog">
+              <a href="single-blog.html">
+                <img
+                  src="assets/images/news/undefined-1725061593883.webp"
+                  class="card-img-top blog-propose-img"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <a href="single-blog.html">
+                  <h5 class="card-title text-red fs-6 fw-bold">
+                    Le WAC débute la saison par une défaite contre le Moghreb de
+                    Fès (1-0)
+                  </h5>
+                </a>
+                <h6>WydadPlus.com - le 24 Septembre 2024 à 23h05</h6>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide card single-blog">
+              <a href="single-blog.html">
+                <img
+                  src="assets/images/news/Amical-Le-WAC-et-le-Club-Africain-font-match-nul-1-1-1723419706630.webp"
+                  class="card-img-top blog-propose-img"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <a href="shop.html">
+                  <h5 class="card-title text-red fs-6 fw-bold">
+                    Amical : Le WAC et le Club Africain font match nul (1-1)
+                  </h5>
+                </a>
+                <h6>WydadPlus.com - le 24 Septembre 2024 à 23h05</h6>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide card single-blog">
+              <a href="#">
+                <img
+                  src="assets/images/news/Un-mercto-rationnel-pour-le-Wydad-Athletic-Club.jpeg"
+                  class="card-img-top blog-propose-img"
+                  alt="..."
+                />
+              </a>
+              <div class="card-body">
+                <a href="#">
+                  <h5 class="card-title text-red fs-6 fw-bold">
+                    Un mercto rationnel pour le Wydad Athletic Club
+                  </h5>
+                </a>
+                <h6>WydadPlus.com - le 24 Septembre 2024 à 23h05</h6>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev btn btn-danger btn-sm"></div>
+          <div class="swiper-button-next btn btn-danger btn-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="my-3">
+      <div class="container">
+        <h1
+          class="title-product-sec py-2 fs-3 fw-bolder text-uppercase border-bottom position-relative"
+        >
+          <span class="text-red">Commentaires</span>
+        </h1>
+        <div class="card comment-card p-3">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Votre email"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="comments" class="form-label">Commentaire</label>
+            <textarea class="form-control" id="comments" rows="3"></textarea>
+          </div>
+          <button class="btn btn-danger ms-auto">Soumettre</button>
+        </div>
+        <div class="card old-comments mt-3">
+          <div class="card-header text-red fw-bold">27 Commentaires</div>
+          <div class="card-body">
+            <blockquote class="blockquote pb-2 mb-1 border-bottom">
+              <p class="fs-6">
+                A well-known quote, contained in a blockquote element.
+              </p>
+              <footer class="blockquote-footer fst-italic">
+                comment@gmail.com
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote pb-2 mb-1 border-bottom">
+              <p class="fs-6">
+                A well-known quote, contained in a blockquote element.
+              </p>
+              <footer class="blockquote-footer fst-italic">
+                comment@gmail.com
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote pb-2 mb-1 border-bottom">
+              <p class="fs-6">
+                A well-known quote, contained in a blockquote element.
+              </p>
+              <footer class="blockquote-footer fst-italic">
+                comment@gmail.com
+              </footer>
+            </blockquote>
+            <blockquote class="blockquote pb-2 mb-1 border-bottom">
+              <p class="fs-6">
+                A well-known quote, contained in a blockquote element.
+              </p>
+              <footer class="blockquote-footer fst-italic">
+                comment@gmail.com
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- link to files js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js.map"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/all.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>

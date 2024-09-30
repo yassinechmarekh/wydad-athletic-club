@@ -551,7 +551,7 @@ label,
   width: 25px;
 }
 
-.details-player-drapeau{
+.details-player-drapeau {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -559,37 +559,37 @@ label,
 
 .match-card .match-footer,
 .match-card .match-header,
-.match-card{
+.match-card {
   border-color: var(--red-color) !important;
 }
 
 .match-card .match-footer,
-.match-card .match-header{
+.match-card .match-header {
   background-color: #f9bbb733;
 }
 
-.match-header div img{
+.match-header div img {
   width: 30px;
 }
 
 .match-footer p,
-.match-header div p{
+.match-header div p {
   font-size: 14px !important;
 }
 
-.match-footer h5{
+.match-footer h5 {
   font-size: 16px !important;
 }
 
-.match-club img{
+.match-club img {
   width: 50px;
 }
 
-.classement div img{
+.classement div img {
   width: 100px;
 }
 
-.classement .botola-ranking{
+.classement .botola-ranking {
   overflow-x: auto !important;
 }
 
@@ -597,18 +597,40 @@ label,
   height: 3px;
 }
 
-.classement table thead tr{
+.classement table thead tr {
   --bs-table-bg: var(--red-color);
   --bs-table-color: #fff;
 }
 
-.classement table{
+.classement table {
   --bs-table-hover-bg: #db100211;
 }
 
-.wac-lign{
+.wac-lign {
   --bs-table-color: var(--red-color);
   --bs-table-hover-color: var(--red-color);
+}
+
+.img-blog img {
+  object-fit: cover;
+  object-position: top center;
+  height: 600px;
+}
+
+.old-comments .blockquote,
+.old-comments .card-header,
+.old-comments,
+.comment-card{
+  border-color: var(--red-color) !important;
+}
+
+.old-comments:hover,
+.comment-card:hover{
+  box-shadow: none;
+}
+
+.old-comments .blockquote:last-child{
+  border: none !important;
 }
 
 @media (max-width: 1200px) {
@@ -642,6 +664,9 @@ label,
   .single-blog .blog-popular-img {
     height: 250px;
   }
+  .img-blog img{
+    height: 500px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -657,6 +682,9 @@ label,
   .single-blog .blog-propose-img {
     height: 250px;
   }
+  .img-blog img{
+    height: 400px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -670,10 +698,10 @@ label,
   .blogs-swp .btn {
     top: 25px;
   }
-  .coach-info h4{
+  .coach-info h4 {
     font-size: 16px !important;
   }
-  .coach-info h5{
+  .coach-info h5 {
     font-size: 15px !important;
   }
 }
