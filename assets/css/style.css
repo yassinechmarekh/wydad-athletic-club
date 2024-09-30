@@ -149,6 +149,7 @@ p {
 
 .icon-menu svg {
   font-size: 20px;
+  color: var(--parag-color) !important;
   transition: 0.3s ease-in-out;
 }
 
@@ -554,6 +555,60 @@ label,
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+
+.match-card .match-footer,
+.match-card .match-header,
+.match-card{
+  border-color: var(--red-color) !important;
+}
+
+.match-card .match-footer,
+.match-card .match-header{
+  background-color: #f9bbb733;
+}
+
+.match-header div img{
+  width: 30px;
+}
+
+.match-footer p,
+.match-header div p{
+  font-size: 14px !important;
+}
+
+.match-footer h5{
+  font-size: 16px !important;
+}
+
+.match-club img{
+  width: 50px;
+}
+
+.classement div img{
+  width: 100px;
+}
+
+.classement .botola-ranking{
+  overflow-x: auto !important;
+}
+
+.classement .botola-ranking::-webkit-scrollbar {
+  height: 3px;
+}
+
+.classement table thead tr{
+  --bs-table-bg: var(--red-color);
+  --bs-table-color: #fff;
+}
+
+.classement table{
+  --bs-table-hover-bg: #db100211;
+}
+
+.wac-lign{
+  --bs-table-color: var(--red-color);
+  --bs-table-hover-color: var(--red-color);
 }
 
 @media (max-width: 1200px) {
