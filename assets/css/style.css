@@ -485,12 +485,14 @@ figure figcaption {
   font-size: 14px !important;
 }
 
+.associated-products-swp .btn-pag::after,
 .players-swp .btn::after,
 .blogs-swp .btn::after {
   color: #fff !important;
   font-size: 16px !important;
 }
 
+.associated-products-swp .btn-pag,
 .players-swp .btn,
 .blogs-swp .btn {
   position: absolute;
@@ -498,11 +500,13 @@ figure figcaption {
   height: 35px;
 }
 
+.associated-products-swp .swiper-button-next.btn-pag,
 .players-swp .swiper-button-next.btn,
 .blogs-swp .swiper-button-next.btn {
   right: 0;
 }
 
+.associated-products-swp .swiper-button-prev.btn-pag,
 .players-swp .swiper-button-prev.btn,
 .blogs-swp .swiper-button-prev.btn {
   left: calc(100% - 60px);
@@ -620,17 +624,61 @@ label,
 .old-comments .blockquote,
 .old-comments .card-header,
 .old-comments,
-.comment-card{
+.comment-card {
   border-color: var(--red-color) !important;
 }
 
 .old-comments:hover,
-.comment-card:hover{
+.comment-card:hover {
   box-shadow: none;
 }
 
-.old-comments .blockquote:last-child{
+.old-comments .blockquote:last-child {
   border: none !important;
+}
+
+.quantity {
+  border-color: var(--red-color);
+  color: var(--red-color);
+  outline: none;
+}
+
+.add-wishlist {
+  cursor: pointer;
+}
+
+.description-product .accordion-item {
+  border: none;
+  border-top: 1px solid #00000031;
+}
+
+.description-product .accordion-item:last-child {
+  border-bottom: 1px solid #00000031;
+}
+
+.description-product .accordion-item .accordion-button:focus {
+  box-shadow: none;
+}
+
+.description-product .accordion-item .accordion-header {
+  --bs-accordion-active-bg: transparent;
+}
+
+.accordion-button[aria-expanded="true"] {
+  color: var(--red-color);
+}
+
+.product-details ul li {
+  list-style: disc !important;
+}
+
+.text-size-min {
+  font-size: 14px !important;
+}
+
+.product-images-mobile-swp .btn-swp::after {
+  font-size: 20px !important;
+  color: black;
 }
 
 @media (max-width: 1200px) {
@@ -664,7 +712,7 @@ label,
   .single-blog .blog-popular-img {
     height: 250px;
   }
-  .img-blog img{
+  .img-blog img {
     height: 500px;
   }
 }
@@ -682,7 +730,7 @@ label,
   .single-blog .blog-propose-img {
     height: 250px;
   }
-  .img-blog img{
+  .img-blog img {
     height: 400px;
   }
 }
@@ -694,6 +742,7 @@ label,
   figure {
     width: 100% !important;
   }
+  .associated-products-swp .btn-pag,
   .players-swp .btn,
   .blogs-swp .btn {
     top: 25px;

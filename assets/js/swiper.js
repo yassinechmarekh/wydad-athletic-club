@@ -133,3 +133,40 @@ const players_swp = new Swiper(".players-swp", {
     },
   },
 });
+
+
+const product_images_mobile_swp = new Swiper('.product-images-mobile-swp', {
+  loop: true,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+const associated_products_swp = new Swiper('.associated-products-swp', {
+  loop: true,
+  spaceBetween: 20,
+  slidesPerView: 4,
+  autoplau:{
+    delay: 2500,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+    550: {
+      slidesPerView: 2,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+});
