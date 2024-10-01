@@ -656,11 +656,11 @@ label,
   border-bottom: 1px solid #00000031;
 }
 
-.description-product .accordion-item .accordion-button:focus {
+.accordion-item .accordion-button:focus {
   box-shadow: none;
 }
 
-.description-product .accordion-item .accordion-header {
+.accordion-item .accordion-header {
   --bs-accordion-active-bg: transparent;
 }
 
@@ -679,6 +679,67 @@ label,
 .product-images-mobile-swp .btn-swp::after {
   font-size: 20px !important;
   color: black;
+}
+
+.table-products::-webkit-scrollbar {
+  height: 3px;
+}
+
+.table-products table,
+th,
+td {
+  border: 1px solid var(--red-color);
+  border-collapse: collapse;
+}
+
+.table-products .t-footer,
+.table-products table thead tr {
+  --bs-table-color: #fff !important;
+  --bs-table-bg: var(--red-color) !important;
+}
+
+.table-products .img-product {
+  width: 100px;
+}
+
+.table-products .title-product:hover h5 {
+  color: var(--red-color) !important;
+  text-decoration: underline !important;
+}
+
+.table-products .qty {
+  min-width: 130px;
+}
+
+.table-products .qty select {
+  border-color: var(--red-color);
+  outline: none;
+  color: var(--red-color);
+}
+
+.table-products .prices {
+  min-width: 100px;
+}
+
+.coupon button {
+  width: fit-content;
+}
+
+#paiement .paypal-details,
+#paiement .cash-on-delivery-details{
+  display: none;
+}
+#paiement #paypal:checked ~ .paypal-details,
+#paiement #cash-on-delivery:checked ~ .cash-on-delivery-details {
+  display: block;
+}
+
+#paiement .form-check-input:checked{
+  background-color: var(--red-color) !important;
+}
+
+input{
+  outline: none;
 }
 
 @media (max-width: 1200px) {

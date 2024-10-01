@@ -27,3 +27,32 @@ var carousel = new bootstrap.Carousel(palmaresCarousel, {
   interval: 2500,
   ride: "carousel",
 });
+
+// next form checkout
+function next_form(prev, next) {
+  const allForms = document.querySelectorAll('.accordion-collapse');
+  const allButtons = document.querySelectorAll('.accordion-button');
+
+  allForms.forEach(form => {
+      form.classList.remove('show');
+  });
+
+  allButtons.forEach(button => {
+      button.classList.add('collapsed');
+      button.setAttribute('aria-expanded', 'false');
+  });
+
+  const prev_form = document.getElementById(prev);
+  const next_form = document.getElementById(next);
+
+  if (prev_form && next_form) {
+      next_form.classList.add('show');
+
+      const next_button = next_form.previousElementSibling.querySelector('button');
+      if (next_button) {
+          next_button.classList.remove('collapsed');
+          next_button.setAttribute('aria-expanded', 'true');
+      }
+  }
+}
+
