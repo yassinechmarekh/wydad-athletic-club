@@ -533,7 +533,8 @@ figure figcaption {
 
 textarea,
 input {
-  border-color: var(--red-color) !important;
+  /* border-color: var(--red-color) !important; */
+  border: 2px solid var(--red-color) !important;
 }
 
 textarea:focus,
@@ -583,6 +584,10 @@ label,
 
 .match-footer h5 {
   font-size: 16px !important;
+}
+
+.match-club{
+  width: 70px;
 }
 
 .match-club img {
